@@ -11,6 +11,16 @@ namespace Assets.Script
     [Serializable]
     public class Person
     {
+        /// <summary>
+        /// Enumerator for abilities that persons have.
+        /// </summary>
+        public enum PersonAbilities
+        {
+            Clean,
+            Cook,
+            Read,
+        }
+
         #region UNITY EDITOR
         public int MinimunRange = 5;
         public int MaxmunRange = 10;
@@ -29,21 +39,21 @@ namespace Assets.Script
         /// <summary>
         /// The force of this person in ocupation.
         /// </summary>
-        public int Force = 0;
+        public float Force = 0;
 
         /// <summary>
         /// How much this person can clean.
         /// </summary>
-        public int Cleaning { get; set; }
+        public float Cleaning { get; set; }
 
         /// <summary>
         /// How much this person can read.
         /// </summary>
-        public int Reading { get; set; }
+        public float Reading { get; set; }
 
         /// <summary>
         /// How much this person can cook.
         /// </summary>
-        public int Cooking { get; set; }
+        public float Cooking { get; set; }
     }
 }
