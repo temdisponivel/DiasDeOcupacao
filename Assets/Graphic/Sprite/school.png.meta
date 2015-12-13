@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: daa5dfe284a36464dace87c896f1d88d
+timeCreated: 1450019560
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Kitchen
+    21300002: Cafeteria
+    21300004: Court
+    21300006: Library
+    21300008: PrincipalOffice
+    21300010: Bathrooms
+    21300012: School
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Kitchen
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 594
+        width: 454
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -121.5, y: 130.80002}
+        - {x: -121.5, y: -129.19998}
+        - {x: 121.5, y: -129.19998}
+        - {x: 121.5, y: 130.80002}
+    - name: Cafeteria
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 798
+        width: 882
+        height: 281
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -235.29999, y: 76.10004}
+        - {x: -235.29999, y: -74.89996}
+        - {x: 235.70001, y: -74.89996}
+        - {x: 235.70001, y: 76.10004}
+    - name: Court
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 6
+        width: 578
+        height: 1072
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -153.83331, y: 286.2}
+        - {x: -153.83331, y: -285.8}
+        - {x: 155.16669, y: -285.8}
+        - {x: 155.16669, y: 286.2}
+    - name: Library
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1
+        width: 629
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -167.69998, y: 55.033333}
+        - {x: -167.69998, y: -53.966667}
+        - {x: 169.30002, y: -53.966667}
+        - {x: 169.30002, y: 55.033333}
+    - name: PrincipalOffice
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 695
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -185.5, y: 52.766666}
+        - {x: -185.5, y: -52.233334}
+        - {x: 185.5, y: -52.233334}
+        - {x: 185.5, y: 52.766666}
+    - name: Bathrooms
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 453
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -121, y: 51.766678}
+        - {x: -121, y: -51.233322}
+        - {x: 121, y: -51.233322}
+        - {x: 121, y: 51.766678}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
