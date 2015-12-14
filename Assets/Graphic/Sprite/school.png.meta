@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: daa5dfe284a36464dace87c896f1d88d
-timeCreated: 1450019560
+timeCreated: 1450055432
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,8 @@ TextureImporter:
     21300008: PrincipalOffice
     21300010: Bathrooms
     21300012: School
+    21300014: Rooms
+    21300016: All
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -61,92 +63,122 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 594
-        width: 454
-        height: 486
+        y: 789
+        width: 395
+        height: 291
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -121.5, y: 130.80002}
-        - {x: -121.5, y: -129.19998}
-        - {x: 121.5, y: -129.19998}
-        - {x: 121.5, y: 130.80002}
+      - - {x: -105.5, y: 78.80002}
+        - {x: -105.5, y: -77.19998}
+        - {x: 105.5, y: -77.19998}
+        - {x: 105.5, y: 78.80002}
     - name: Cafeteria
       rect:
         serializedVersion: 2
-        x: 456
-        y: 798
-        width: 882
-        height: 281
+        x: 395
+        y: 927
+        width: 826
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -235.29999, y: 76.10004}
-        - {x: -235.29999, y: -74.89996}
-        - {x: 235.70001, y: -74.89996}
-        - {x: 235.70001, y: 76.10004}
+      - - {x: -220.33333, y: 41.400024}
+        - {x: -220.33333, y: -40.599976}
+        - {x: 221.66667, y: -40.599976}
+        - {x: 221.66667, y: 41.400024}
     - name: Court
       rect:
         serializedVersion: 2
-        x: 1340
+        x: 1221
         y: 6
-        width: 578
+        width: 697
         height: 1072
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -153.83331, y: 286.2}
-        - {x: -153.83331, y: -285.8}
-        - {x: 155.16669, y: -285.8}
-        - {x: 155.16669, y: 286.2}
+      - - {x: -185.79999, y: 286.2}
+        - {x: -185.79999, y: -285.8}
+        - {x: 186.20001, y: -285.8}
+        - {x: 186.20001, y: 286.2}
     - name: Library
       rect:
         serializedVersion: 2
-        x: 699
-        y: 1
-        width: 629
-        height: 202
+        x: 806
+        y: 369
+        width: 410
+        height: 261
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -167.69998, y: 55.033333}
-        - {x: -167.69998, y: -53.966667}
-        - {x: 169.30002, y: -53.966667}
-        - {x: 169.30002, y: 55.033333}
+      - - {x: -109.1333, y: 70.8}
+        - {x: -109.1333, y: -69.2}
+        - {x: 110.8667, y: -69.2}
+        - {x: 110.8667, y: 70.8}
     - name: PrincipalOffice
       rect:
         serializedVersion: 2
-        x: 0
-        y: 8
-        width: 695
-        height: 196
+        x: 502
+        y: 496
+        width: 231
+        height: 327
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -185.5, y: 52.766666}
-        - {x: -185.5, y: -52.233334}
-        - {x: 185.5, y: -52.233334}
-        - {x: 185.5, y: 52.766666}
+      - - {x: -61.266663, y: 88.033356}
+        - {x: -61.266663, y: -86.966644}
+        - {x: 62.733337, y: -86.966644}
+        - {x: 62.733337, y: 88.033356}
     - name: Bathrooms
       rect:
         serializedVersion: 2
         x: 0
-        y: 308
-        width: 453
-        height: 191
+        y: 376
+        width: 316
+        height: 257
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -121, y: 51.766678}
-        - {x: -121, y: -51.233322}
-        - {x: 121, y: -51.233322}
-        - {x: 121, y: 51.766678}
+      - - {x: -84.5, y: 69.53334}
+        - {x: -84.5, y: -68.46666}
+        - {x: 84.5, y: -68.46666}
+        - {x: 84.5, y: 69.53334}
+    - name: Rooms
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 1221
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -326, y: 75.03333}
+        - {x: -326, y: -73.96667}
+        - {x: 326, y: -73.96667}
+        - {x: 326, y: 75.03333}
+    - name: All
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -512, y: 288}
+        - {x: -512, y: -288}
+        - {x: 512, y: -288}
+        - {x: 512, y: 288}
     outline: []
   spritePackingTag: 
   userData: 

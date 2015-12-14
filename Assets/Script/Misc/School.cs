@@ -22,5 +22,24 @@ namespace Assets.Script.Misc
                 GameObject.Destroy(this.gameObject);
             }
         }
+
+        void Update()
+        {
+            if (Input.GetButtonUp("Cancel"))
+            {
+                if (HudManager.Instance.IsOptOpen)
+                {
+                    HudManager.Instance.CloseOption();
+                }
+            }
+        }
+
+        void OnMouseUp()
+        {
+            if (!HudManager.Instance.IsOptOpen)
+            {
+                HudManager.Instance.OpenOption();
+            }
+        }
     }
 }

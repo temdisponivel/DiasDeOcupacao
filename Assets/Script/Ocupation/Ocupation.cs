@@ -12,15 +12,20 @@ namespace Assets.Script.Ocupation
     {
         static public Ocupation Instance = null;
 
-        public int _minRangeForcePerson = 5;
-        public int _maxRangeForcePerson = 10;
+        public int _cleanStatus = 3;
+        public int _studyStatus = 3;
+        public int _cookStatus = 3;
         public int _startPersonQuantity = 0;
-        public GameObject _person = null;
-        public LinkedList<Person> _persons = new LinkedList<Person>();
+        public int _persons = 0;
         public float _ocupationForce = 0;
-        public float _initialOcupationForce = 0;
+        public float _popularAdeptance = 0;
+        private float _lastPopularAdeptance = 0;
+        private float _lastOcupanceForce = 0;
+        private float _lastCleanStatus = 0;
+        private float _lastStudyStatus = 0;
+        private float _lastCookStatus = 0;
 
-        public void Start()
+        void Start()
         {
             if (Ocupation.Instance == null)
             {
@@ -33,37 +38,135 @@ namespace Assets.Script.Ocupation
                 return;
             }
 
-            for (int i = 0; i < this._startPersonQuantity; i++)
+            this._persons = this._startPersonQuantity;
+            GameManager.Instance.AddDayCallback(this.FinishDay);
+        }
+
+        /// <summary>
+        /// Callback of the finish day event.
+        /// </summary>
+        public void FinishDay()
+        {
+            if (this._lastPopularAdeptance < this._popularAdeptance)
             {
-                this.AddPerson();
+                this.IncreasePopularAdeptance();
+            }
+            else
+            {
+                this.DescreasePopularAdeptance();
             }
 
-            this._initialOcupationForce = this._ocupationForce;
-        }
+            if (this._lastOcupanceForce < this._ocupationForce)
+            {
+                this.IncreaseOcupanceForce();
+            }
+            else
+            {
+                this.DescreaseOcupanceForce();
+            }
 
-        public void Update()
-        {
+            if (this._lastCleanStatus < this._cleanStatus)
+            {
+                this.IncreaseCleanStatus();
+            }
+            else
+            {
+                this.DescreaseCleanStatus();
+            }
 
+            if (this._lastStudyStatus < this._studyStatus)
+            {
+                this.IncreaseStudyStatus();
+            }
+            else
+            {
+                this.DescreaseCleanStatus();
+            }
+
+            if (this._lastCookStatus < this._cookStatus)
+            {
+                this.IncreaseCookStatus();
+            }
+            else
+            {
+                this.DescreaseCleanStatus();
+            }
+
+            this._lastPopularAdeptance = this._popularAdeptance;
+            this._lastOcupanceForce = this._ocupationForce;
+            this._lastCleanStatus = this._cleanStatus;
+            this._lastCookStatus = this._cookStatus;
+            this._lastStudyStatus = this._studyStatus;
         }
 
         /// <summary>
-        /// Adds a new person to this ocupation.
+        /// Funcion for when the popular adeptance decrease.
         /// </summary>
-        public void AddPerson()
+        private void DescreasePopularAdeptance()
         {
-            Person person = new Person();
-            this._ocupationForce += person.Force;
-            this._persons.AddLast(person);
         }
 
         /// <summary>
-        /// Removes a person from this ocupation.
+        /// Funcion for when the popular adeptance increase.
         /// </summary>
-        public void RemovePerson()
+        private void IncreasePopularAdeptance()
         {
-            Person person = this._persons.Last.Value;
-            this._ocupationForce -= person.Force;
-            this._persons.RemoveLast();
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance decrease.
+        /// </summary>
+        private void DescreaseOcupanceForce()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance increase.
+        /// </summary>
+        private void IncreaseOcupanceForce()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance decrease.
+        /// </summary>
+        private void DescreaseCookStatus()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance increase.
+        /// </summary>
+        private void IncreaseCookStatus()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance decrease.
+        /// </summary>
+        private void DescreaseCleanStatus()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance increase.
+        /// </summary>
+        private void IncreaseCleanStatus()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance decrease.
+        /// </summary>
+        private void DescreaseStudyStatus()
+        {
+        }
+
+        /// <summary>
+        /// Funcion for when the popular adeptance increase.
+        /// </summary>
+        private void IncreaseStudyStatus()
+        {
         }
     }
 }

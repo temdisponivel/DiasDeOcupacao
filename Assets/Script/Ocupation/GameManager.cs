@@ -24,7 +24,6 @@ namespace Assets.Script.Ocupation
 
         public int _secondsPerDay = 1;
         public int CurrentDay { get; set; }
-
         private float _startDayTime = 0f;
         private float _elapseDayTime = 0f;
         private bool _inDay = false;
@@ -39,6 +38,7 @@ namespace Assets.Script.Ocupation
             else
             {
                 GameObject.Destroy(this.gameObject);
+                return;
             }
         }
 

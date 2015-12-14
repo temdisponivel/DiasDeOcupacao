@@ -10,7 +10,7 @@ namespace Assets.Script.News
     /// Class needed because unity can't handle generics directly, so we create this and will appear on inpectior.
     /// </summary>
     [Serializable]
-    public class NewsDictionary : TypeEntityDictionary<News.NewsType, News>
+    public class NewsDictionary : TypeEntityDictionary<News.SideOfTheNews, News>
     {
     }
 }

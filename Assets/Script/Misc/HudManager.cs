@@ -12,13 +12,14 @@ namespace Assets.Script.Misc
     {
         static public HudManager Instance = null;
 
+        public bool IsOptOpen { get; set; }
+
+        public GameObject _options = null;
+
         public Text _textQuantityPerson = null;
         public Text _textDay = null;
-        public Image _imagePopularAdeption = null;
-        public Image _imageOcupationForce = null;
-
-        private float _localScaleStartPopularAdeption = 0f;
-        private float _localScaleStartOcupationForce = 0f;
+        public Text _textPopularAdeption = null;
+        public Text _textOcupationForce = null;
 
         void Start()
         {
@@ -32,30 +33,33 @@ namespace Assets.Script.Misc
                 GameObject.Destroy(this.gameObject);
                 return;
             }
-
-            this._localScaleStartOcupationForce = this._imageOcupationForce.rectTransform.localScale.x;
-            this._localScaleStartPopularAdeption = this._imagePopularAdeption.rectTransform.localScale.x;
         }
 
 
         void Update()
         {
             _textDay.text = GameManager.Instance.CurrentDay.ToString();
-            _textQuantityPerson.text = Ocupation.Ocupation.Instance._persons.Count.ToString();
+            _textQuantityPerson.text = Ocupation.Ocupation.Instance._persons.ToString();
+            _textOcupationForce.text = Ocupation.Ocupation.Instance._ocupationForce.ToString();
+            _textPopularAdeption.text = Ocupation.Ocupation.Instance._popularAdeptance.ToString();
+        }
 
-            float percentForce = Ocupation.Ocupation.Instance._ocupationForce / Ocupation.Ocupation.Instance._initialOcupationForce;
-            _imageOcupationForce.rectTransform.localScale = new Vector2
-            {
-                x = this._localScaleStartOcupationForce * percentForce,
-                y = this._imageOcupationForce.rectTransform.localScale.y
-            };
-
-            percentForce = Ocupation.PopularAdeption.Instance.AdeptionForce / Ocupation.Ocupation.Instance._initialOcupationForce;
-            _imageOcupationForce.rectTransform.localScale = new Vector2
-            {
-                x = this._localScaleStartOcupationForce * percentForce,
-                y = this._imageOcupationForce.rectTransform.localScale.y
-            };
+        /// <summary>
+        /// Make the option context open.
+        /// </summary>
+        public void OpenOption()
+        {
+            _options.SetActive(true);
+            this.IsOptOpen = true;
+        }
+        
+        /// <summary>
+        /// Make the option context open.
+        /// </summary>
+        public void CloseOption()
+        {
+            _options.SetActive(false);
+            this.IsOptOpen = false;
         }
     }
 }

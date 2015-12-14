@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Script.News
 {
@@ -12,15 +13,29 @@ namespace Assets.Script.News
     public class News : MonoBehaviour
     {
         /// <summary>
-        /// Enumerator for better handling news type.
+        /// Enumerator that descrives the side of the news toward 
         /// </summary>
-        public enum NewsType
+        public enum SideOfTheNews
         {
             ProOcupation,
             CounterOcupation,
-            Slanderous,
-            Truthful,
             Neutral
+        }
+
+        public enum TypeOfNews
+        {
+            Slanderous,
+            Truthful
+        }
+
+        public string _news = "";
+        public Text _text = null;
+        public SideOfTheNews _position = SideOfTheNews.Neutral;
+        public TypeOfNews _type = TypeOfNews.Truthful;
+
+        void Start()
+        {
+            _text.text = _news;
         }
     }
 }
