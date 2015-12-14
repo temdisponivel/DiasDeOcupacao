@@ -14,7 +14,8 @@ namespace Assets.Script.Misc
         /// </summary>
         public void OptionSelected(GameObject action)
         {
-            ActionManager.Instance.StartAction(action);
+            HudManager.Instance.CloseOption();
+            GameObject.Instantiate(action);
         }
     }
 }

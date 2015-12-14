@@ -11,7 +11,6 @@ namespace Assets.Script.Action.ActionPerformer
     /// </summary>
     public class ActionPerformer : MonoBehaviour
     {
-        public System.Action _callback = null;
         public int _points = 3;
         public float _secondsPerKey = 0f;
         public int _targetKeys = 0;
@@ -19,7 +18,6 @@ namespace Assets.Script.Action.ActionPerformer
         public KeyCode _currentKey = KeyCode.A;
         public Text _textKeyPerform = null;
         private float _lastKeyChange = 0f;
-        private int _keysChanged = 0;
 
         public void Start()
         {
@@ -33,16 +31,14 @@ namespace Assets.Script.Action.ActionPerformer
                 this._failureKeys--;
                 this.ChangeKey();
             }
-
-            if (Input.GetKeyDown(_currentKey))
-            {
-                this._targetKeys++;
-                this.ChangeKey();
-            }
-
-            if (Input.anyKey && !Input.GetKeyDown(_currentKey))
+            else if (Input.anyKeyDown && !Input.GetKeyDown(_currentKey))
             {
                 this._failureKeys--;
+                this.ChangeKey();
+            }
+            else if (Input.GetKeyDown(_currentKey))
+            {
+                this._targetKeys--;
                 this.ChangeKey();
             }
 
@@ -58,8 +54,7 @@ namespace Assets.Script.Action.ActionPerformer
             {
                 this.FinishAction(true);
             }
-
-            if (this._failureKeys == 0)
+            else if (this._failureKeys == 0)
             {
                 this.FinishAction(false);
             }
@@ -72,13 +67,13 @@ namespace Assets.Script.Action.ActionPerformer
         {
             if (success)
             {
+                Debug.Log(this._points);
                 this.UpdateStatusMetric(this._points);
             }
             else
             {
-                this.UpdateStatusMetric(-this._points);
+                this.UpdateStatusMetric(-(this._points));
             }
-            this._callback();
             GameObject.Destroy(this.gameObject);
         }
 
@@ -88,16 +83,7 @@ namespace Assets.Script.Action.ActionPerformer
         /// <param name="points">Points to add.</param>
         protected void UpdateStatusMetric(int points)
         {
-            Ocupation.Ocupation.Instance._ocupationForce += this._points;
-        }
-
-        /// <summary>
-        /// Add a callback funcion to be called when this Action finishs.
-        /// </summary>
-        /// <param name="callback">Callback function that will receive as parameter the force created by this action</param>
-        public void SetCallback(System.Action callback)
-        {
-            this._callback = callback;
+            Ocupation.Ocupation.Instance._ocupationForce += points;
         }
 
         /// <summary>
@@ -108,9 +94,7 @@ namespace Assets.Script.Action.ActionPerformer
             int keyIndex = UnityEngine.Random.Range(97, 123); //Min e Max of the alphabetics key code
             this._currentKey = (KeyCode) keyIndex;
             this._textKeyPerform.text = this._currentKey.ToString();
-
             this._lastKeyChange = Time.time;
-            this._keysChanged++;
         }
     }
 }
