@@ -13,6 +13,8 @@ namespace Assets.Script.Misc
     {
         static public OptionsManager Instance = null;
 
+        public int _transitionSeconds = 1;
+
         public bool IsOptOpen { get; set; }
         public GameObject _options = null;
 
@@ -28,6 +30,34 @@ namespace Assets.Script.Misc
         {
             this.CloseOption();
             GameObject.Instantiate(action);
+        }
+
+        /// <summary>
+        /// Call a protest.
+        /// </summary>
+        public void Protest()
+        {
+            FadeManager.Instance.FadeIn();
+            this.StartCoroutine(this.WaitToReturn("Protest"));
+        }
+
+        /// <summary>
+        /// Give a interview.
+        /// </summary>
+        public void Interview()
+        {
+            FadeManager.Instance.FadeIn();
+            this.StartCoroutine(this.WaitToReturn("Interview"));
+        }
+
+        /// <summary>
+        /// Function that wait some seconds before return to the school scene.
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator WaitToReturn(string sceneToLoad)
+        {
+            yield return new WaitForSeconds(this._transitionSeconds);
+            Application.LoadLevel(sceneToLoad);
         }
 
         /// <summary>

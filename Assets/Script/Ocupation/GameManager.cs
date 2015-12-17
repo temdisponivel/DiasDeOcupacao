@@ -33,6 +33,8 @@ namespace Assets.Script.Ocupation
                 GameObject.Destroy(this.gameObject);
                 return;
             }
+
+
         }
 
         /// <summary>
@@ -110,7 +112,6 @@ namespace Assets.Script.Ocupation
 
         public void StartGamePlay()
         {
-            Application.LoadLevel("School");
             this.Day = new Day();
             this.Day.Started = true;
             Action.ActionPerformer.ActionPerformer.DifficultyCoefficient = 1;

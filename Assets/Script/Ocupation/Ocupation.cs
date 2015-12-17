@@ -24,7 +24,7 @@ namespace Assets.Script.Ocupation
         public int _cookStatus = 3;
         public int _startPersonQuantity = 0;
         public int _persons = 0;
-        public float _popularAdeptance = 0;
+        public int _popularAdeptance = 0;
 
         void Start()
         {
