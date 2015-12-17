@@ -17,10 +17,8 @@ namespace Assets.Script.Ocupation
         public int _cookStatus = 3;
         public int _startPersonQuantity = 0;
         public int _persons = 0;
-        public float _ocupationForce = 0;
         public float _popularAdeptance = 0;
         private float _lastPopularAdeptance = 0;
-        private float _lastOcupanceForce = 0;
         private float _lastCleanStatus = 0;
         private float _lastStudyStatus = 0;
         private float _lastCookStatus = 0;
@@ -56,15 +54,6 @@ namespace Assets.Script.Ocupation
                 this.DescreasePopularAdeptance();
             }
 
-            if (this._lastOcupanceForce < this._ocupationForce)
-            {
-                this.IncreaseOcupanceForce();
-            }
-            else
-            {
-                this.DescreaseOcupanceForce();
-            }
-
             if (this._lastCleanStatus < this._cleanStatus)
             {
                 this.IncreaseCleanStatus();
@@ -93,7 +82,6 @@ namespace Assets.Script.Ocupation
             }
 
             this._lastPopularAdeptance = this._popularAdeptance;
-            this._lastOcupanceForce = this._ocupationForce;
             this._lastCleanStatus = this._cleanStatus;
             this._lastCookStatus = this._cookStatus;
             this._lastStudyStatus = this._studyStatus;
@@ -110,20 +98,6 @@ namespace Assets.Script.Ocupation
         /// Funcion for when the popular adeptance increase.
         /// </summary>
         private void IncreasePopularAdeptance()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance decrease.
-        /// </summary>
-        private void DescreaseOcupanceForce()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance increase.
-        /// </summary>
-        private void IncreaseOcupanceForce()
         {
         }
 

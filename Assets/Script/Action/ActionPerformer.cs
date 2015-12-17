@@ -83,7 +83,7 @@ namespace Assets.Script.Action.ActionPerformer
         /// <param name="points">Points to add.</param>
         protected void UpdateStatusMetric(int points)
         {
-            Ocupation.Ocupation.Instance._ocupationForce += points;
+            //Ocupation.Ocupation.Instance._ocupationForce += points;
         }
 
         /// <summary>

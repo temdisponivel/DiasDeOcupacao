@@ -23,22 +23,22 @@ namespace Assets.Script.Misc
             }
         }
 
-        void Update()
+        void FixedUpdate()
         {
             if (Input.GetButtonUp("Cancel"))
             {
-                if (HudManager.Instance.IsOptOpen)
+                if (OptionsManager.Instance.IsOptOpen)
                 {
-                    HudManager.Instance.CloseOption();
+                    OptionsManager.Instance.CloseOption();
                 }
             }
         }
 
         void OnMouseUp()
         {
-            if (!HudManager.Instance.IsOptOpen)
+            if (!OptionsManager.Instance.IsOptOpen)
             {
-                HudManager.Instance.OpenOption();
+                OptionsManager.Instance.OpenOption();
             }
         }
     }

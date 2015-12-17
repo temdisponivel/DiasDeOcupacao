@@ -9,26 +9,18 @@ namespace Assets.Script.Ocupation
     /// </summary>
     public class GameManager : MonoBehaviour
     {
-        /// <summary>
-        /// Possible reasons for a game over.
-        /// </summary>
-        public enum GameOverState
-        {
-            RoomMetric,
-            PoliceInvasion
-        }
-
         static public GameManager Instance = null;
 
         public List<System.Action> _callbacksDay = new List<System.Action>();
 
         public int _secondsPerDay = 1;
+        public bool WithSound { get; set; }
         public int CurrentDay { get; set; }
         private float _startDayTime = 0f;
         private float _elapseDayTime = 0f;
-        private bool _inDay = false;
+        public bool InDay { get; set; }
 
-        void Start()
+        void Awake()
         {
             if (GameManager.Instance == null)
             {
@@ -44,7 +36,7 @@ namespace Assets.Script.Ocupation
 
         void Update()
         {
-            if (this._inDay)
+            if (this.InDay)
             {
                 if (this._elapseDayTime - this._startDayTime >= this._secondsPerDay)
                 {
@@ -63,7 +55,7 @@ namespace Assets.Script.Ocupation
         public void StartDay()
         {
             this._startDayTime = Time.time;
-            this._inDay = true;
+            this.InDay = true;
         }
 
         /// <summary>
@@ -72,7 +64,7 @@ namespace Assets.Script.Ocupation
         public void FinishDay()
         {
             this._startDayTime = 0;
-            this._inDay = false;
+            this.InDay = false;
             this._elapseDayTime = 0;
 
             foreach (var callback in this._callbacksDay)
@@ -93,10 +85,25 @@ namespace Assets.Script.Ocupation
         /// <summary>
         /// End this game with a given state.
         /// </summary>
-        /// <param name="state">Reason why this game is over.</param>
-        public void GameOver(GameOverState state)
+        public void GameOver()
         {
-            //TODO: game over
+            Application.LoadLevel("GameOver");
+        }
+        
+        /// <summary>
+        /// Finish game and send to the winner scene.
+        /// </summary>
+        public void WinGame()
+        {
+            Application.LoadLevel("WinGame");
+        }
+
+        public void StartGamePlay()
+        {
+            Application.LoadLevel("School");
+            this.CurrentDay = 1;
+            this._startDayTime = 0;
+            this.InDay = false;
         }
     }
 }

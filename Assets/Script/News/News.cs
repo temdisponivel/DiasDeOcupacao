@@ -10,7 +10,8 @@ namespace Assets.Script.News
     /// <summary>
     /// Class that represents a new in the game.
     /// </summary>
-    public class News : MonoBehaviour
+    [Serializable]
+    public class News
     {
         /// <summary>
         /// Enumerator that descrives the side of the news toward 
@@ -22,20 +23,26 @@ namespace Assets.Script.News
             Neutral
         }
 
+        /// <summary>
+        /// Enumerator for the subject of the news.
+        /// </summary>
+        public enum SubjectOfTheNews
+        {
+            Ocupation,
+            Protest,
+            Interview
+        }
+
         public enum TypeOfNews
         {
             Slanderous,
             Truthful
         }
 
-        public string _news = "";
-        public Text _text = null;
+        public string _newsTitle = "";
+        public string _newsMessage = "";
         public SideOfTheNews _position = SideOfTheNews.Neutral;
         public TypeOfNews _type = TypeOfNews.Truthful;
-
-        void Start()
-        {
-            _text.text = _news;
-        }
+        public SubjectOfTheNews _subject = SubjectOfTheNews.Ocupation;
     }
 }

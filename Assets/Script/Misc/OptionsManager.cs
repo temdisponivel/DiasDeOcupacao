@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Script.Action;
+using Assets.Script.Ocupation;
 
 namespace Assets.Script.Misc
 {
@@ -9,13 +10,41 @@ namespace Assets.Script.Misc
     /// </summary>
     public class OptionsManager : MonoBehaviour
     {
+        static public OptionsManager Instance = null;
+
+        public bool IsOptOpen { get; set; }
+        public GameObject _options = null;
+
+        void Start()
+        {
+            OptionsManager.Instance = this;
+        }
+        
         /// <summary>
         /// Give a interview.
         /// </summary>
         public void OptionSelected(GameObject action)
         {
-            HudManager.Instance.CloseOption();
+            this.CloseOption();
             GameObject.Instantiate(action);
+        }
+
+        /// <summary>
+        /// Make the option context open.
+        /// </summary>
+        public void OpenOption()
+        {
+            _options.SetActive(true);
+            this.IsOptOpen = true;
+        }
+
+        /// <summary>
+        /// Make the option context open.
+        /// </summary>
+        public void CloseOption()
+        {
+            _options.SetActive(false);
+            this.IsOptOpen = false;
         }
     }
 }
