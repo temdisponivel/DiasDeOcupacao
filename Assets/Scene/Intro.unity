@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ba9a54e7c2222459752507e3db0f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggleSound: {fileID: 1271543226}
+  _sound: 0
 --- !u!114 &199853304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ba9a54e7c2222459752507e3db0f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toggleSound: {fileID: 0}
+  _sound: 0
 --- !u!82 &199853305
 AudioSource:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 50b2bbb1cae27c242a6222a1facf9027, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 28c708ca9630f16428dacadba1fe5479, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .200000003
   m_Pitch: 1
@@ -966,7 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: b35c5b86326bc3c499e818f07f878928, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7663b308529944a428cb98e420fa2d22, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1056,7 +1056,18 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 199853304}
+        m_MethodName: Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
@@ -1518,7 +1529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 59fb80901d438d9418cf8d0aa6cd8add, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e27b44cf249638428d52d884d8dc6e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

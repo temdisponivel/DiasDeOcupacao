@@ -27,11 +27,11 @@ namespace Assets.Script.News
         {
             foreach (var news in this._news)
             {
-                if (this._listNews[news._subject] == null)
+                if (!this._listNews.ContainsKey(news._subject))
                 {
                     this._listNews[news._subject] = new Dictionary<News.SideOfTheNews, List<News>>();
                 }
-                if (this._listNews[news._subject][news._position] == null)
+                if (!this._listNews[news._subject].ContainsKey(news._position))
                 {
                     this._listNews[news._subject][news._position] = new List<News>();
                 }
@@ -40,6 +40,8 @@ namespace Assets.Script.News
             }
 
             this.ShowFirstNews();
+            GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
+            GameManager.Instance.AddFinishDayCallback(this.FinishDay);
         }
 
         /// <summary>
@@ -66,7 +68,7 @@ namespace Assets.Script.News
         /// <param name="news">News to show.</param>
         private void ShowNews(News news)
         {
-            this._newsDay.text = GameManager.Instance.CurrentDay.ToString();
+            this._newsDay.text = Day.Number.ToString();
             this._newsTitle.text = news._newsTitle;
             this._newsMessage.text = news._newsMessage;
             this._newsObject.SetActive(true);
@@ -75,10 +77,26 @@ namespace Assets.Script.News
         /// <summary>
         /// Function for the button that dispose this news.
         /// </summary>
-        public void StartDay()
+        public void StartActivities()
         {
             this._newsObject.SetActive(false);
             GameManager.Instance.StartDay();
+        }
+
+        /// <summary>
+        /// Function for when a day has been initiated.
+        /// </summary>
+        public void InitiateDay()
+        {
+            this.ShowNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.Neutral, News.TypeOfNews.Truthful);
+        }
+
+        /// <summary>
+        /// Function for when a day has been finished.
+        /// </summary>
+        public void FinishDay()
+        {
+
         }
     }
 }

@@ -11,7 +11,8 @@ namespace Assets.Script.Action.ActionPerformer
     /// </summary>
     public class ActionPerformer : MonoBehaviour
     {
-        public int _points = 3;
+        static public float DifficultyCoefficient { get; set; }
+        public float _keyVelocity = 0f;
         public float _secondsPerKey = 0f;
         public int _targetKeys = 0;
         public int _failureKeys = 0;
@@ -21,6 +22,10 @@ namespace Assets.Script.Action.ActionPerformer
 
         public void Start()
         {
+            this._secondsPerKey /= ActionPerformer.DifficultyCoefficient;
+            this._keyVelocity *= ActionPerformer.DifficultyCoefficient;
+            this._targetKeys += (int) ActionPerformer.DifficultyCoefficient;
+            this._failureKeys += (int) ActionPerformer.DifficultyCoefficient;
             this.ChangeKey();
         }
 
@@ -65,25 +70,7 @@ namespace Assets.Script.Action.ActionPerformer
         /// </summary>
         virtual protected void FinishAction(bool success)
         {
-            if (success)
-            {
-                Debug.Log(this._points);
-                this.UpdateStatusMetric(this._points);
-            }
-            else
-            {
-                this.UpdateStatusMetric(-(this._points));
-            }
             GameObject.Destroy(this.gameObject);
-        }
-
-        /// <summary>
-        /// Method that perform the update of the ocupation force by a given pontuation.
-        /// </summary>
-        /// <param name="points">Points to add.</param>
-        protected void UpdateStatusMetric(int points)
-        {
-            //Ocupation.Ocupation.Instance._ocupationForce += points;
         }
 
         /// <summary>

@@ -10,12 +10,17 @@ namespace Assets.Script.Misc
     /// </summary>
     public class MainMenuManager : MonoBehaviour
     {
-        public Toggle _toggleSound = null;
+        public bool _sound = false;
 
         public void Play()
         {
             GameManager.Instance.StartGamePlay();
-            GameManager.Instance.WithSound = _toggleSound.isOn;
+            GameManager.Instance.WithSound = _sound;
+        }
+
+        public void Toggle(bool state)
+        {
+            this._sound = state;
         }
     }
 }

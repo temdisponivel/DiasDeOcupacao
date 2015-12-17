@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Script.Misc;
 
 namespace Assets.Script.Ocupation
 {
@@ -11,13 +12,13 @@ namespace Assets.Script.Ocupation
     {
         static public GameManager Instance = null;
 
-        public List<System.Action> _callbacksDay = new List<System.Action>();
+        public List<System.Action> _finishCallbacksDay = new List<System.Action>();
+        public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
         public int _secondsPerDay = 1;
         public bool WithSound { get; set; }
-        public int CurrentDay { get; set; }
-        private float _startDayTime = 0f;
-        private float _elapseDayTime = 0f;
+        public Day Day { get; set; }
+        public float _secondsTransitionDay = 2;
         public bool InDay { get; set; }
 
         void Awake()
@@ -34,28 +35,19 @@ namespace Assets.Script.Ocupation
             }
         }
 
-        void Update()
-        {
-            if (this.InDay)
-            {
-                if (this._elapseDayTime - this._startDayTime >= this._secondsPerDay)
-                {
-                    this.FinishDay();
-                }
-                else
-                {
-                    this._elapseDayTime += Time.deltaTime;
-                }
-            }
-        }
-
         /// <summary>
         /// Initiate a new day in ocupation.
         /// </summary>
         public void StartDay()
         {
-            this._startDayTime = Time.time;
-            this.InDay = true;
+            this.Day = new Day();
+            this.Day.Started = true;
+            FadeManager.Instance.FadeOut();
+
+            foreach (var callback in this._initiatedCallbacksDay)
+            {
+                callback();
+            }
         }
 
         /// <summary>
@@ -63,23 +55,41 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void FinishDay()
         {
-            this._startDayTime = 0;
-            this.InDay = false;
-            this._elapseDayTime = 0;
-
-            foreach (var callback in this._callbacksDay)
+            foreach (var callback in this._finishCallbacksDay)
             {
                 callback();
             }
+
+            FadeManager.Instance.FadeIn();
+            this.StartCoroutine(this.WaitToDay());
+        }
+
+        /// <summary>
+        /// Wait some seconds to initiate another day.
+        /// </summary>
+        public IEnumerator WaitToDay()
+        {
+            yield return new WaitForSeconds(this._secondsTransitionDay);
+            this.StartDay();
+            FadeManager.Instance.FadeOut();
         }
 
         /// <summary>
         /// Add a callback to receive message when a day has finish.
         /// </summary>
         /// <param name="action">Callback to call.</param>
-        public void AddDayCallback(System.Action action)
+        public void AddFinishDayCallback(System.Action action)
         {
-            _callbacksDay.Add(action);
+            _finishCallbacksDay.Add(action);
+        }
+
+        /// <summary>
+        /// Add a callback to receive message when a day has initiated.
+        /// </summary>
+        /// <param name="action">Callback to call.</param>
+        public void AddInitiateDayCallback(System.Action action)
+        {
+            _initiatedCallbacksDay.Add(action);
         }
 
         /// <summary>
@@ -101,9 +111,9 @@ namespace Assets.Script.Ocupation
         public void StartGamePlay()
         {
             Application.LoadLevel("School");
-            this.CurrentDay = 1;
-            this._startDayTime = 0;
-            this.InDay = false;
+            this.Day = new Day();
+            this.Day.Started = true;
+            Action.ActionPerformer.ActionPerformer.DifficultyCoefficient = 1;
         }
     }
 }

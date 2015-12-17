@@ -2,6 +2,7 @@
 using System.Collections;
 using Assets.Script.Action;
 using Assets.Script.Ocupation;
+using UnityEngine.UI;
 
 namespace Assets.Script.Misc
 {

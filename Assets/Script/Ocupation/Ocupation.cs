@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using Assets.Script.Misc;
 
 
 namespace Assets.Script.Ocupation
@@ -12,16 +14,17 @@ namespace Assets.Script.Ocupation
     {
         static public Ocupation Instance = null;
 
+        public Image _imagePopularAdeption = null;
+        public Image _imageClean = null;
+        public Image _imageCook = null;
+        public Image _imageStudy = null;
+        public Image _imageDay = null;
         public int _cleanStatus = 3;
         public int _studyStatus = 3;
         public int _cookStatus = 3;
         public int _startPersonQuantity = 0;
         public int _persons = 0;
         public float _popularAdeptance = 0;
-        private float _lastPopularAdeptance = 0;
-        private float _lastCleanStatus = 0;
-        private float _lastStudyStatus = 0;
-        private float _lastCookStatus = 0;
 
         void Start()
         {
@@ -37,7 +40,7 @@ namespace Assets.Script.Ocupation
             }
 
             this._persons = this._startPersonQuantity;
-            GameManager.Instance.AddDayCallback(this.FinishDay);
+            GameManager.Instance.AddFinishDayCallback(this.FinishDay);
         }
 
         /// <summary>
@@ -45,102 +48,11 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void FinishDay()
         {
-            if (this._lastPopularAdeptance < this._popularAdeptance)
-            {
-                this.IncreasePopularAdeptance();
-            }
-            else
-            {
-                this.DescreasePopularAdeptance();
-            }
-
-            if (this._lastCleanStatus < this._cleanStatus)
-            {
-                this.IncreaseCleanStatus();
-            }
-            else
-            {
-                this.DescreaseCleanStatus();
-            }
-
-            if (this._lastStudyStatus < this._studyStatus)
-            {
-                this.IncreaseStudyStatus();
-            }
-            else
-            {
-                this.DescreaseCleanStatus();
-            }
-
-            if (this._lastCookStatus < this._cookStatus)
-            {
-                this.IncreaseCookStatus();
-            }
-            else
-            {
-                this.DescreaseCleanStatus();
-            }
-
-            this._lastPopularAdeptance = this._popularAdeptance;
-            this._lastCleanStatus = this._cleanStatus;
-            this._lastCookStatus = this._cookStatus;
-            this._lastStudyStatus = this._studyStatus;
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance decrease.
-        /// </summary>
-        private void DescreasePopularAdeptance()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance increase.
-        /// </summary>
-        private void IncreasePopularAdeptance()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance decrease.
-        /// </summary>
-        private void DescreaseCookStatus()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance increase.
-        /// </summary>
-        private void IncreaseCookStatus()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance decrease.
-        /// </summary>
-        private void DescreaseCleanStatus()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance increase.
-        /// </summary>
-        private void IncreaseCleanStatus()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance decrease.
-        /// </summary>
-        private void DescreaseStudyStatus()
-        {
-        }
-
-        /// <summary>
-        /// Funcion for when the popular adeptance increase.
-        /// </summary>
-        private void IncreaseStudyStatus()
-        {
+            this._imageClean.rectTransform.localScale = new Vector3 { x = this._imageClean.sprite.texture.width * this._cleanStatus, y = this._imageClean.rectTransform.localScale.y, z = this._imageClean.rectTransform.localScale.z };
+            this._imageCook.rectTransform.localScale = new Vector3 { x = this._imageCook.sprite.texture.width * this._cookStatus, y = this._imageCook.rectTransform.localScale.y, z = this._imageCook.rectTransform.localScale.z };
+            this._imageStudy.rectTransform.localScale = new Vector3 { x = this._imageStudy.sprite.texture.width * this._studyStatus, y = this._imageStudy.rectTransform.localScale.y, z = this._imageStudy.rectTransform.localScale.z };
+            this._imagePopularAdeption.rectTransform.localScale = new Vector3 { x = this._imagePopularAdeption.sprite.texture.width * this._popularAdeptance, y = this._imagePopularAdeption.rectTransform.localScale.y, z = this._imagePopularAdeption.rectTransform.localScale.z };
+            this._imageDay.rectTransform.localScale = new Vector3 { x = this._imageDay.sprite.texture.width * Day.Number, y = this._imageDay.rectTransform.localScale.y, z = this._imageDay.rectTransform.localScale.z };
         }
     }
 }
