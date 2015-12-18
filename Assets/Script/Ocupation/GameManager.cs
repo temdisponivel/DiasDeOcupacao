@@ -43,6 +43,8 @@ namespace Assets.Script.Ocupation
                 GameObject.Destroy(this.gameObject);
                 return;
             }
+
+            this.WithSound = true;
         }
 
         /// <summary>

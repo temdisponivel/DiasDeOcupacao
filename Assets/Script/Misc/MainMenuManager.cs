@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using Assets.Script.Ocupation;
+using System;
 
 namespace Assets.Script.Misc
 {
@@ -34,9 +35,17 @@ namespace Assets.Script.Misc
             Application.LoadLevel("School");
         }
 
-        public void Toggle(bool state)
+        public void Toggle()
         {
-            this._sound = state;
+            this._sound = !this._sound;
+            if (this._sound)
+            {
+                this.GetComponent<AudioSource>().UnPause();
+            }
+            else
+            {
+                this.GetComponent<AudioSource>().Pause();
+            }
         }
     }
 }
