@@ -44,6 +44,7 @@ namespace Assets.Script.Action
             this._failureKeys += (int) ActionPerformer.DifficultyCoefficient;
             this.ChangeKey();
             ActionPerformer.InAction = true;
+            OptionsManager.Instance.CloseOption();
         }
 
         virtual protected void Update()
@@ -89,6 +90,7 @@ namespace Assets.Script.Action
         {
             GameObject.Destroy(this.gameObject);
             ActionPerformer.InAction = false;
+            OptionsManager.Instance.OpenOption();
         }
 
         /// <summary>

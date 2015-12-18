@@ -17,7 +17,6 @@ namespace Assets.Script.Ocupation
         public List<System.Action> _finishCallbacksDay = new List<System.Action>();
         public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
-        public GameObject _policeAttack = null;
         public int _lastDay = 10;
         public bool WithSound { get; set; }
         public Day Day { get; set; }
@@ -99,12 +98,14 @@ namespace Assets.Script.Ocupation
                 {
                     if (!this.Day[ActionPerformer.Actions.Interview])
                     {
-                        GameObject.Instantiate(this._policeAttack);
+                        FadeManager.Instance.FadeIn();
+                        this.StartCoroutine(this.WaitToPoliceAttack());
                     }
                 }
                 else
                 {
-                    GameObject.Instantiate(this._policeAttack);
+                    FadeManager.Instance.FadeIn();
+                    this.StartCoroutine(this.WaitToPoliceAttack());
                 }
                 this._indexPoliceDay++;
                 return;
@@ -126,6 +127,10 @@ namespace Assets.Script.Ocupation
         /// </summary>
         private void InternalFinishDay()
         {
+            FadeManager.Instance.FadeIn();
+            this.StartCoroutine(this.WaitToDay());
+            this.UpdateStatus();
+
             foreach (var callback in this._finishCallbacksDay)
             {
                 if (callback == null)
@@ -134,11 +139,8 @@ namespace Assets.Script.Ocupation
                 }
                 callback();
             }
-            FadeManager.Instance.FadeIn();
-            this.StartCoroutine(this.WaitToDay());
-            this.UpdateStatus();
 
-            if (this._lastDay == Day.Number + 1)
+            if (this._lastDay == Day.Number)
             {
                 this.WinGame();
             }
@@ -223,6 +225,16 @@ namespace Assets.Script.Ocupation
         }
 
         /// <summary>
+        /// Waits the transition seconds bafore send to the police attack scene.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator WaitToPoliceAttack()
+        {
+            yield return new WaitForSeconds(this._secondsTransitionDay);
+            Application.LoadLevel("PoliceAttack");
+        }
+
+        /// <summary>
         /// Add a callback to receive message when a day has finish.
         /// </summary>
         /// <param name="action">Callback to call.</param>
@@ -263,6 +275,7 @@ namespace Assets.Script.Ocupation
         {
             this.Day = new Day();
             this.Day.Started = true;
+            NewsManager.ShowFirst = true;
             ActionPerformer.DifficultyCoefficient = 1;
             Day.Number = 1;
             this.ShouldProtest = true;

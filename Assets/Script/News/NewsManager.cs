@@ -14,6 +14,7 @@ namespace Assets.Script.News
     {
         static public NewsManager Instance = null;
 
+        static public bool ShowFirst { get; set; }
         public int[] _slanderousNewsDay = null;
         public News LastNews { get; set; }
         public News NextNews { get; set; }
@@ -46,9 +47,10 @@ namespace Assets.Script.News
                 this._listNews[news._subject][news._position].Add(news);
             }
 
-            if (Day.Number == 1)
+            if (NewsManager.ShowFirst)
             {
                 this.ShowFirstNews();
+                NewsManager.ShowFirst = false;
             }
 
             NewsManager.Instance = this;
@@ -61,9 +63,6 @@ namespace Assets.Script.News
         /// </summary>
         public News GetNews(News.SubjectOfTheNews subject, News.SideOfTheNews position, News.TypeOfNews type)
         {
-            Debug.Log(subject);
-            Debug.Log(position);
-            Debug.Log(type);
             var list = this._listNews[subject][position];
             return (list = list.FindAll(n => n._type == type))[UnityEngine.Random.Range(0, list.Count - 1)];
         }

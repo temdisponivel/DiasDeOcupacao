@@ -24,6 +24,21 @@ namespace Assets.Script.Misc
         {
             OptionsManager.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDayCallback);
+            this.UpdateShowingButtons();
+        }
+
+        /// <summary>
+        /// Update the buttons that is to be displayed.
+        /// </summary>
+        private void UpdateShowingButtons()
+        {
+            foreach (var button in this._buttonAction)
+            {
+                if (GameManager.Instance.Day.HasPerformed(button._actionType))
+                {
+                    button._object.SetActive(false);
+                }
+            }
         }
         
         /// <summary>
@@ -32,7 +47,6 @@ namespace Assets.Script.Misc
         public void OptionSelected(GameObject action)
         {
             ActionPerformer.Actions type = action.GetComponent<ActionPerformer>()._type;
-            this.CloseOption();
             GameObject.Instantiate(action);
 
             foreach (var button in this._buttonAction)

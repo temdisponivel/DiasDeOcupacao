@@ -42,6 +42,16 @@ namespace Assets.Script.Misc
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type">Type of the action</param>
+        /// <returns>True if perform the specific action</returns>
+        public bool HasPerformed(Action.ActionPerformer.Actions type)
+        {
+            return this._actions[(int) type].HasValue;
+        }
+
+        /// <summary>
         /// If this day was started
         /// </summary>
         public bool Started { get; set; }

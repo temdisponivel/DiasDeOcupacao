@@ -22,13 +22,13 @@ namespace Assets.Script.Ocupation
 
         void Start()
         {
-            GameManager.Instance.AddFinishDayCallback(this.FinishDay);
+            GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
         }
 
         /// <summary>
-        /// Callback of the finish day event.
+        /// Callback of the initiate day event.
         /// </summary>
-        public void FinishDay()
+        public void InitiateDay()
         {
             this._imageClean.rectTransform.sizeDelta = new Vector2 { x = this._imageClean.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._cleanStatus, y = this._imageClean.rectTransform.sizeDelta.y };
             this._imageCook.rectTransform.sizeDelta = new Vector2 { x = this._imageCook.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._cookStatus, y = this._imageCook.rectTransform.sizeDelta.y };
