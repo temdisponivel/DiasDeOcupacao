@@ -36,7 +36,7 @@ namespace Assets.Script.Action
         public Actions _type = Actions.Cook;
         private float _lastKeyChange = 0f;
 
-        public void Start()
+        virtual public void Start()
         {
             this._secondsPerKey /= ActionPerformer.DifficultyCoefficient;
             this._keyVelocity *= ActionPerformer.DifficultyCoefficient;

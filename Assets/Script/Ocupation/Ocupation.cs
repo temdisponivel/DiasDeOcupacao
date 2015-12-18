@@ -19,27 +19,9 @@ namespace Assets.Script.Ocupation
         public Image _imageCook = null;
         public Image _imageStudy = null;
         public Image _imageDay = null;
-        public int _cleanStatus = 3;
-        public int _studyStatus = 3;
-        public int _cookStatus = 3;
-        public int _startPersonQuantity = 0;
-        public int _persons = 0;
-        public int _popularAdeptance = 0;
 
         void Start()
         {
-            if (Ocupation.Instance == null)
-            {
-                Ocupation.Instance = this;
-                GameObject.DontDestroyOnLoad(this.gameObject);
-            }
-            else
-            {
-                GameObject.Destroy(this.gameObject);
-                return;
-            }
-
-            this._persons = this._startPersonQuantity;
             GameManager.Instance.AddFinishDayCallback(this.FinishDay);
         }
 
@@ -48,11 +30,11 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void FinishDay()
         {
-            this._imageClean.rectTransform.sizeDelta = new Vector3 { x = this._imageClean.sprite.texture.width * this._cleanStatus, y = this._imageClean.rectTransform.localScale.y, z = this._imageClean.rectTransform.localScale.z };
-            this._imageCook.rectTransform.sizeDelta = new Vector3 { x = this._imageCook.sprite.texture.width * this._cookStatus, y = this._imageCook.rectTransform.localScale.y, z = this._imageCook.rectTransform.localScale.z };
-            this._imageStudy.rectTransform.sizeDelta = new Vector3 { x = this._imageStudy.sprite.texture.width * this._studyStatus, y = this._imageStudy.rectTransform.localScale.y, z = this._imageStudy.rectTransform.localScale.z };
-            this._imagePopularAdeption.rectTransform.sizeDelta = new Vector3 { x = this._imagePopularAdeption.sprite.texture.width * this._popularAdeptance, y = this._imagePopularAdeption.rectTransform.localScale.y, z = this._imagePopularAdeption.rectTransform.localScale.z };
-            this._imageDay.rectTransform.sizeDelta = new Vector3 { x = this._imageDay.sprite.texture.width * Day.Number, y = this._imageDay.rectTransform.localScale.y, z = this._imageDay.rectTransform.localScale.z };
+            this._imageClean.rectTransform.sizeDelta = new Vector2 { x = this._imageClean.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._cleanStatus, y = this._imageClean.rectTransform.sizeDelta.y };
+            this._imageCook.rectTransform.sizeDelta = new Vector2 { x = this._imageCook.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._cookStatus, y = this._imageCook.rectTransform.sizeDelta.y };
+            this._imageStudy.rectTransform.sizeDelta = new Vector2 { x = this._imageStudy.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._studyStatus, y = this._imageStudy.rectTransform.sizeDelta.y };
+            this._imagePopularAdeption.rectTransform.sizeDelta = new Vector2 { x = this._imagePopularAdeption.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._popularAdeptance, y = this._imagePopularAdeption.rectTransform.sizeDelta.y };
+            this._imageDay.rectTransform.sizeDelta = new Vector2 { x = this._imageDay.sprite.bounds.size.x * 100 * Day.Number, y = this._imageDay.rectTransform.sizeDelta.y };
         }
     }
 }

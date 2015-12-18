@@ -18,9 +18,12 @@ namespace Assets.Script.Misc
         public bool IsOptOpen { get; set; }
         public GameObject _options = null;
 
+        public ButtonAction[] _buttonAction;
+
         void Start()
         {
             OptionsManager.Instance = this;
+            GameManager.Instance.AddInitiateDayCallback(this.InitiateDayCallback);
         }
         
         /// <summary>
@@ -28,9 +31,18 @@ namespace Assets.Script.Misc
         /// </summary>
         public void OptionSelected(GameObject action)
         {
-            GameManager.Instance.Day[action.GetComponent<ActionPerformer>()._type] = true;
+            ActionPerformer.Actions type = action.GetComponent<ActionPerformer>()._type;
             this.CloseOption();
             GameObject.Instantiate(action);
+
+            foreach (var button in this._buttonAction)
+            {
+                if (button._actionType == type)
+                {
+                    button._object.SetActive(false);
+                    break;
+                }
+            }
         }
 
         /// <summary>
@@ -40,6 +52,14 @@ namespace Assets.Script.Misc
         {
             FadeManager.Instance.FadeIn();
             this.StartCoroutine(this.WaitToReturn("Protest"));
+            foreach (var button in this._buttonAction)
+            {
+                if (button._actionType == ActionPerformer.Actions.Protest)
+                {
+                    button._object.SetActive(false);
+                    break;
+                }
+            }
             GameManager.Instance.Day[ActionPerformer.Actions.Protest] = true;
         }
 
@@ -50,6 +70,14 @@ namespace Assets.Script.Misc
         {
             FadeManager.Instance.FadeIn();
             this.StartCoroutine(this.WaitToReturn("Interview"));
+            foreach (var button in this._buttonAction)
+            {
+                if (button._actionType == ActionPerformer.Actions.Interview)
+                {
+                    button._object.SetActive(false);
+                    break;
+                }
+            }
             GameManager.Instance.Day[ActionPerformer.Actions.Interview] = true;
         }
 
@@ -87,6 +115,17 @@ namespace Assets.Script.Misc
         {
             _options.SetActive(false);
             this.IsOptOpen = false;
+        }
+
+        /// <summary>
+        /// Callback for when a new day is initiated.
+        /// </summary>
+        public void InitiateDayCallback()
+        {
+            foreach (var button in this._buttonAction)
+            {
+                button._object.SetActive(true);
+            }
         }
     }
 }

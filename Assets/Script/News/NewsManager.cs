@@ -12,6 +12,9 @@ namespace Assets.Script.News
     /// </summary>
     public class NewsManager : MonoBehaviour
     {
+        static public NewsManager Instance = null;
+
+        public News LastNews { get; set; }
         public GameObject _newsObject = null;
         public Text _newsDay = null;
         public Text _newsTitle = null;
@@ -40,6 +43,7 @@ namespace Assets.Script.News
             }
 
             this.ShowFirstNews();
+            NewsManager.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
             GameManager.Instance.AddFinishDayCallback(this.FinishDay);
         }
@@ -72,6 +76,7 @@ namespace Assets.Script.News
             this._newsTitle.text = news._newsTitle;
             this._newsMessage.text = news._newsMessage;
             this._newsObject.SetActive(true);
+            this._lastNews = news;
         }
 
         /// <summary>

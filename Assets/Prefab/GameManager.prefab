@@ -39,7 +39,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b264686580a66438ec9d05adedbc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsPerDay: 30
+  _policeAttack: {fileID: 132016, guid: 27f489138b9108e469b1a77a3984f40b, type: 2}
+  _secondsTransitionDay: 2
+  _intervalProtest: 3
+  _policeAttackDays:
+  - _day: 3
+    _dependent: 1
+  - _day: 6
+    _dependent: 0
+  - _day: 10
+    _dependent: 0
+  _occupationStatus:
+    _maxStatus: 3
+    _cleanStatus: 3
+    _studyStatus: 3
+    _cookStatus: 3
+    _popularAdeptance: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

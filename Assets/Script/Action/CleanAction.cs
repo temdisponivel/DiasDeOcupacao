@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Script.Ocupation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,7 @@ namespace Assets.Script.Action
     {
         protected override void FinishAction(bool success)
         {
-            if (success)
-            {
-                Ocupation.Ocupation.Instance._cleanStatus++;
-            }
-            else
-            {
-                Ocupation.Ocupation.Instance._cleanStatus--;
-            }
+            GameManager.Instance.Day[ActionPerformer.Actions.Clean] = success;
             base.FinishAction(success);
         }
     }

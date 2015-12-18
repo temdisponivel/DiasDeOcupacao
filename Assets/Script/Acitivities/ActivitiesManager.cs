@@ -17,7 +17,7 @@ namespace Activities
         
         void Start()
         {
-            switch (Ocupation.Instance._popularAdeptance)
+            switch (GameManager.Instance._occupationStatus._popularAdeptance)
             {
                 case 1:
                     _groupTwo.SetActive(false);

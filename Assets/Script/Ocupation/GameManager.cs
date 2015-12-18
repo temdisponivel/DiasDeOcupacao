@@ -16,11 +16,19 @@ namespace Assets.Script.Ocupation
         public List<System.Action> _finishCallbacksDay = new List<System.Action>();
         public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
-        public int _secondsPerDay = 1;
+        public GameObject _policeAttack = null;
         public bool WithSound { get; set; }
         public Day Day { get; set; }
         public float _secondsTransitionDay = 2;
+        public int _intervalProtest = 3;
         public bool InDay { get; set; }
+        public bool ShouldInterview { get; set; }
+        public bool ShouldProtest { get; set; }
+        public PoliceAttackInpector[] _policeAttackDays = null;
+        private int _lastProtest = 0;
+        private int _indexPoliceDay = 0;
+
+        public OccupationStatus _occupationStatus;
 
         void Awake()
         {
@@ -43,11 +51,33 @@ namespace Assets.Script.Ocupation
         {
             this.Day = new Day();
             this.Day.Started = true;
-            FadeManager.Instance.FadeOut();
 
             foreach (var callback in this._initiatedCallbacksDay)
             {
+                if (callback == null)
+                {
+                    continue;
+                }
                 callback();
+            }
+
+            FadeManager.Instance.FadeOut();
+            if (Day.Number - this._lastProtest > this._intervalProtest)
+            {
+                this.ShouldProtest = true;
+            }
+            else
+            {
+                this.ShouldProtest = false;
+            }
+
+            if (News.NewsManager.Instance.LastNews._type == News.News.TypeOfNews.Slanderous)
+            {
+                this.ShouldInterview = true;
+            }
+            else
+            {
+                this.ShouldInterview = false;
             }
         }
 
@@ -58,11 +88,107 @@ namespace Assets.Script.Ocupation
         {
             foreach (var callback in this._finishCallbacksDay)
             {
+                if (callback == null)
+                {
+                    continue;
+                }
                 callback();
             }
 
+            PoliceAttackInpector policeAttack = null;
+            if (this._indexPoliceDay < this._policeAttackDays.Length && (policeAttack = this._policeAttackDays[this._indexPoliceDay])._day == Day.Number)
+            {
+                if (policeAttack._dependent)
+                {
+                    if (!this.Day[ActionPerformer.Actions.Interview])
+                    {
+                        GameObject.Instantiate(this._policeAttack);
+                    }
+                }
+                else
+                {
+                    GameObject.Instantiate(this._policeAttack);
+                }
+                this._indexPoliceDay++;
+            }
+            else
+            {
+                FadeManager.Instance.FadeIn();
+                this.StartCoroutine(this.WaitToDay());
+            }
+            this.UpdateStatus();
+        }
+
+        /// <summary>
+        /// Callback for when the police attack has finished.
+        /// </summary>
+        public void FinishPoliceAttack()
+        {
             FadeManager.Instance.FadeIn();
             this.StartCoroutine(this.WaitToDay());
+        }
+
+        /// <summary>
+        /// Method that update all status in the end of day.
+        /// </summary>
+        private void UpdateStatus()
+        {
+            if (!this.Day[ActionPerformer.Actions.Cook])
+            {
+                this._occupationStatus._cookStatus--;
+            }
+            else
+            {
+                this._occupationStatus._cookStatus = Mathf.Clamp(this._occupationStatus._cookStatus + 1, 0, this._occupationStatus._maxStatus);
+            }
+            if (!this.Day[ActionPerformer.Actions.Clean])
+            {
+                this._occupationStatus._cleanStatus--;
+            }
+            else
+            {
+                this._occupationStatus._cleanStatus = Mathf.Clamp(this._occupationStatus._cleanStatus + 1, 0, this._occupationStatus._maxStatus);
+            }
+
+            if (!this.Day[ActionPerformer.Actions.Study])
+            {
+                this._occupationStatus._studyStatus--;
+            }
+            else
+            {
+                this._occupationStatus._studyStatus = Mathf.Clamp(this._occupationStatus._studyStatus + 1, 0, this._occupationStatus._maxStatus);
+            }
+
+            if (this.Day[ActionPerformer.Actions.Interview])
+            {
+                if (this.ShouldInterview)
+                {
+                    this._occupationStatus._popularAdeptance = Mathf.Clamp(this._occupationStatus._popularAdeptance + 1, 0, this._occupationStatus._maxStatus);
+                }
+                else
+                {
+                    this._occupationStatus._popularAdeptance--;
+                }
+            }
+            else
+            {
+                if (this.ShouldInterview)
+                {
+                    this._occupationStatus._popularAdeptance--;
+                }
+            }
+
+            if (this.Day[ActionPerformer.Actions.Protest])
+            {
+                if (this.ShouldProtest)
+                {
+                    this._occupationStatus._popularAdeptance = Mathf.Clamp(this._occupationStatus._popularAdeptance + 1, 0, this._occupationStatus._maxStatus);
+                }
+                else
+                {
+                    this._occupationStatus._popularAdeptance--;
+                }
+            }
         }
 
         /// <summary>
@@ -114,6 +240,9 @@ namespace Assets.Script.Ocupation
             this.Day = new Day();
             this.Day.Started = true;
             ActionPerformer.DifficultyCoefficient = 1;
+            Day.Number = 1;
+            this.ShouldProtest = true;
+            this.ShouldInterview = false;
         }
     }
 }

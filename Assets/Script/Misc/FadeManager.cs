@@ -38,26 +38,20 @@ namespace Assets.Script.Misc
 
         private IEnumerator Fade(bool fadein)
         {
-            float percent = this._percentPerFrame / 100f;
-            float initial = _imageFade.color.a;
             if (fadein)
             {
                 this._imageFade.enabled = true;
-                while (initial + percent < 100)
-                {
-                    initial += percent;
-                    this._imageFade.color = new Color { r = this._imageFade.color.r, g = this._imageFade.color.g, b = this._imageFade.color.b, a = initial };
-                    yield return 1;
-                }
             }
-            else
+
+            for (float i = this._imageFade.color.a, percent = this._percentPerFrame / 100f; fadein ? i <= 1 : i >= 0; i += (fadein ? percent : -percent))
             {
-                while (initial - percent > 0)
-                {
-                    initial -= percent;
-                    this._imageFade.color = new Color { r = this._imageFade.color.r, g = this._imageFade.color.g, b = this._imageFade.color.b, a = initial };
-                    yield return 1;
-                }
+                Debug.Log(i);
+                this._imageFade.color = new Color { r = this._imageFade.color.r, g = this._imageFade.color.g, b = this._imageFade.color.b, a = i };
+                yield return 1;
+            }
+
+            if (!fadein)
+            {
                 this._imageFade.enabled = false;
             }
         }

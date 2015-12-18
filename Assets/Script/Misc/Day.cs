@@ -21,7 +21,7 @@ namespace Assets.Script.Misc
         /// </summary>
         static public int Number { get; set; }
 
-        private bool[] _actions = new bool[Enum.GetNames(typeof(Action.ActionPerformer.Actions)).Length];
+        private bool?[] _actions = new bool?[Enum.GetNames(typeof(Action.ActionPerformer.Actions)).Length];
 
         /// <summary>
         /// Get or set if some given action was already perfom today.
@@ -32,11 +32,11 @@ namespace Assets.Script.Misc
         {
             get
             {
-                return this._actions[(int) type];
+                return (this._actions[(int)type].HasValue? this._actions[(int)type].Value : false);
             }
             set
             {
-                this._actions[(int) type] = value;
+                this._actions[(int)type] = value;
                 this.CheckFinish();
             }
         }
@@ -51,8 +51,17 @@ namespace Assets.Script.Misc
         /// </summary>
         public void CheckFinish()
         {
-            if (this[Action.ActionPerformer.Actions.Clean] && this[Action.ActionPerformer.Actions.Cook] && this[Action.ActionPerformer.Actions.Study]
-                && this[Action.ActionPerformer.Actions.Interview] && this[Action.ActionPerformer.Actions.Protest])
+            bool finished = true;
+            for (int i = 0; i < this._actions.Length; i++)
+            {
+                if (this._actions[i] == null)
+                {
+                    finished = false;
+                    break;
+                }
+            }
+
+            if (finished)
             {
                 GameManager.Instance.FinishDay();
             }
