@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Assets.Script.Misc;
 using Assets.Script.Action;
+using Assets.Script.News;
 
 namespace Assets.Script.Ocupation
 {
@@ -17,6 +18,7 @@ namespace Assets.Script.Ocupation
         public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
         public GameObject _policeAttack = null;
+        public int _lastDay = 10;
         public bool WithSound { get; set; }
         public Day Day { get; set; }
         public float _secondsTransitionDay = 2;
@@ -75,10 +77,14 @@ namespace Assets.Script.Ocupation
             {
                 this.ShouldInterview = true;
             }
-            else
+            else if (NewsManager.Instance.LastNews._position == News.News.SideOfTheNews.CounterOcupation)
             {
-                this.ShouldInterview = false;
+                this._occupationStatus._popularAdeptance--;
             }
+
+            this.ShouldInterview = false;            
+
+            ActionPerformer.DifficultyCoefficient += .2f;
         }
 
         /// <summary>
@@ -86,15 +92,6 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void FinishDay()
         {
-            foreach (var callback in this._finishCallbacksDay)
-            {
-                if (callback == null)
-                {
-                    continue;
-                }
-                callback();
-            }
-
             PoliceAttackInpector policeAttack = null;
             if (this._indexPoliceDay < this._policeAttackDays.Length && (policeAttack = this._policeAttackDays[this._indexPoliceDay])._day == Day.Number)
             {
@@ -110,13 +107,10 @@ namespace Assets.Script.Ocupation
                     GameObject.Instantiate(this._policeAttack);
                 }
                 this._indexPoliceDay++;
+                return;
             }
-            else
-            {
-                FadeManager.Instance.FadeIn();
-                this.StartCoroutine(this.WaitToDay());
-            }
-            this.UpdateStatus();
+
+            this.InternalFinishDay();
         }
 
         /// <summary>
@@ -124,8 +118,30 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void FinishPoliceAttack()
         {
+            this.InternalFinishDay();
+        }
+
+        /// <summary>
+        /// Make all necessary calls to finish a day.
+        /// </summary>
+        private void InternalFinishDay()
+        {
+            foreach (var callback in this._finishCallbacksDay)
+            {
+                if (callback == null)
+                {
+                    continue;
+                }
+                callback();
+            }
             FadeManager.Instance.FadeIn();
             this.StartCoroutine(this.WaitToDay());
+            this.UpdateStatus();
+
+            if (this._lastDay == Day.Number + 1)
+            {
+                this.WinGame();
+            }
         }
 
         /// <summary>
@@ -159,6 +175,7 @@ namespace Assets.Script.Ocupation
                 this._occupationStatus._studyStatus = Mathf.Clamp(this._occupationStatus._studyStatus + 1, 0, this._occupationStatus._maxStatus);
             }
 
+
             if (this.Day[ActionPerformer.Actions.Interview])
             {
                 if (this.ShouldInterview)
@@ -189,6 +206,11 @@ namespace Assets.Script.Ocupation
                     this._occupationStatus._popularAdeptance--;
                 }
             }
+
+            if (this._occupationStatus.GameOver())
+            {
+                this.GameOver();
+            }
         }
 
         /// <summary>
@@ -198,7 +220,6 @@ namespace Assets.Script.Ocupation
         {
             yield return new WaitForSeconds(this._secondsTransitionDay);
             this.StartDay();
-            FadeManager.Instance.FadeOut();
         }
 
         /// <summary>
@@ -235,6 +256,9 @@ namespace Assets.Script.Ocupation
             Application.LoadLevel("WinGame");
         }
 
+        /// <summary>
+        /// Start the game play.
+        /// </summary>
         public void StartGamePlay()
         {
             this.Day = new Day();

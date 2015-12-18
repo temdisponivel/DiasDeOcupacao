@@ -14,15 +14,19 @@ namespace Assets.Script.News
     {
         static public NewsManager Instance = null;
 
+        public int[] _slanderousNewsDay = null;
         public News LastNews { get; set; }
+        public News NextNews { get; set; }
         public GameObject _newsObject = null;
         public Text _newsDay = null;
         public Text _newsTitle = null;
         public Text _newsMessage = null;
         public News[] _news = null;
         public News _firstNews = null;
-        public News _lastNews = null;
+        public News _winNews = null;
         public News _gameOverNews = null;
+
+        private int _slanderousNewsDayIndex = 0;
 
         private Dictionary<News.SubjectOfTheNews, Dictionary<News.SideOfTheNews, List<News>>> _listNews = new Dictionary<News.SubjectOfTheNews,Dictionary<News.SideOfTheNews,List<News>>>();
 
@@ -42,7 +46,11 @@ namespace Assets.Script.News
                 this._listNews[news._subject][news._position].Add(news);
             }
 
-            this.ShowFirstNews();
+            if (Day.Number == 1)
+            {
+                this.ShowFirstNews();
+            }
+
             NewsManager.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
             GameManager.Instance.AddFinishDayCallback(this.FinishDay);
@@ -51,12 +59,16 @@ namespace Assets.Script.News
         /// <summary>
         /// Retuns a random news according with the given subject, position and type.
         /// </summary>
-        public void ShowNews(News.SubjectOfTheNews subject, News.SideOfTheNews position, News.TypeOfNews type)
+        public News GetNews(News.SubjectOfTheNews subject, News.SideOfTheNews position, News.TypeOfNews type)
         {
+            Debug.Log(subject);
+            Debug.Log(position);
+            Debug.Log(type);
             var list = this._listNews[subject][position];
-            News news = list.FindAll(n => n._type == type)[UnityEngine.Random.Range(0, list.Count - 1)];
-            this.ShowNews(news);
+            return (list = list.FindAll(n => n._type == type))[UnityEngine.Random.Range(0, list.Count - 1)];
         }
+
+
 
         /// <summary>
         /// Shows the first news of the game.
@@ -70,13 +82,13 @@ namespace Assets.Script.News
         /// Shows a news in game.
         /// </summary>
         /// <param name="news">News to show.</param>
-        private void ShowNews(News news)
+        public void ShowNews(News news)
         {
             this._newsDay.text = Day.Number.ToString();
             this._newsTitle.text = news._newsTitle;
             this._newsMessage.text = news._newsMessage;
             this._newsObject.SetActive(true);
-            this._lastNews = news;
+            this.LastNews = news;
         }
 
         /// <summary>
@@ -85,7 +97,6 @@ namespace Assets.Script.News
         public void StartActivities()
         {
             this._newsObject.SetActive(false);
-            GameManager.Instance.StartDay();
         }
 
         /// <summary>
@@ -93,7 +104,14 @@ namespace Assets.Script.News
         /// </summary>
         public void InitiateDay()
         {
-            this.ShowNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.Neutral, News.TypeOfNews.Truthful);
+            if (this._slanderousNewsDayIndex < this._slanderousNewsDay.Length && this._slanderousNewsDay[this._slanderousNewsDayIndex] == Day.Number)
+            {
+                this.ShowNews(this.GetNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Slanderous));
+            }
+            else
+            {
+                this.ShowNews(this.NextNews);
+            }
         }
 
         /// <summary>
@@ -101,7 +119,40 @@ namespace Assets.Script.News
         /// </summary>
         public void FinishDay()
         {
-
+            if (GameManager.Instance.Day[Action.ActionPerformer.Actions.Interview])
+            {
+                if (GameManager.Instance.ShouldInterview)
+                {
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Interview, News.SideOfTheNews.ProOcupation, News.TypeOfNews.Truthful);
+                }
+                else
+                {
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Interview, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Truthful);
+                }
+            }
+            else if (GameManager.Instance.Day[Action.ActionPerformer.Actions.Protest])
+            {
+                if (GameManager.Instance.ShouldProtest)
+                {
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Protest, News.SideOfTheNews.ProOcupation, News.TypeOfNews.Truthful);
+                }
+                else
+                {
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Protest, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Truthful);
+                }
+            }
+            else
+            {
+                if (!GameManager.Instance.Day[Action.ActionPerformer.Actions.Clean] || !GameManager.Instance.Day[Action.ActionPerformer.Actions.Cook] ||
+                    !GameManager.Instance.Day[Action.ActionPerformer.Actions.Study])
+                {
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Truthful);
+                }
+                else
+                {
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.ProOcupation, News.TypeOfNews.Truthful);
+                }
+            }
         }
     }
 }

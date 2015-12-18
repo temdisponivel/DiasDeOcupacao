@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &178710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 417592}
+  - 114: {fileID: 11419740}
+  m_Layer: 0
+  m_Name: NewsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417592
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .55562377, y: -1.47578716, z: -9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11419740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456fd8381ac3c4f42916d1a27ca55777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slanderousNewsDay: 03000000
+  _newsObject: {fileID: 0}
+  _newsDay: {fileID: 0}
+  _newsTitle: {fileID: 0}
+  _newsMessage: {fileID: 0}
+  _news:
+  - _newsTitle: "Ocupa\xE7\xE3o mal organizada desagrada popula\xE7\xE3o"
+    _newsMessage: "Alunos mal organizados e uma escola completamente suja e destru\xEDda.
+      Isso \xE9 mais um dia de uma ocupa\xE7\xE3o que poderia dar muito certo, mas
+      vem se transformando em uma trag\xE9dia e desagradando a popula\xE7\xE3o. Correm
+      boatos que alguns ocupantes come\xE7aram a desistir da ocupa\xE7\xE3o."
+    _position: 1
+    _type: 1
+    _subject: 0
+  - _newsTitle: "Alunos se complicam na ocupa\xE7\xE3o da zona leste"
+    _newsMessage: "Nada do planejado e esperado vem acontecendo na ocupa\xE7\xE3o
+      de uma das maiores ocupa\xE7\xF5es de escolas da cidade. Os alunos v\xE3o dando
+      uma li\xE7\xE3o de como n\xE3o fazer uma ocupa\xE7\xE3o. Com um gerenciamento
+      muito mal guiado. Pensamos que a ocupa\xE7\xE3o n\xE3o conseguir\xE1 sobreviver
+      por muito tempo."
+    _position: 1
+    _type: 1
+    _subject: 0
+  - _newsTitle: "Situa\xE7\xE3o de uma das principais ocupa\xE7\xF5es da cidade piora"
+    _newsMessage: "A ocupa\xE7\xE3o vem desmoronando, o descaso dos ocupantes na escola
+      vem sendo um dos principais fatores para tudo isso. Ou as atitudes dos alunos
+      mudam ou essa ser\xE1 mais uma ocupa\xE7\xE3o perdida"
+    _position: 1
+    _type: 1
+    _subject: 0
+  - _newsTitle: "Sucesso? Talvez seja a palavra para essa ocupa\xE7\xE3o"
+    _newsMessage: "Centenas de alunos, unidos todos por uma causa conseguem uma ocupa\xE7\xE3o
+      muito bem organizada. Protestando e alcan\xE7ando, at\xE9 ent\xE3o, seus objetivos.
+      Se continuar assim a ocupa\xE7\xE3o tem tudo para ser um grande sucesso. A pergunta
+      que fica \xE9 se eles v\xE3o conseguir manter a organiza\xE7\xE3o"
+    _position: 0
+    _type: 1
+    _subject: 0
+  - _newsTitle: "Alunos unidos continuam em ocupa\xE7\xE3o"
+    _newsMessage: "Alunos est\xE3o organizados e estruturados dentro das ocupa\xE7\xF5es.
+      Agora resta saber at\xE9 onde chegar\xE1 esse grupo"
+    _position: 0
+    _type: 1
+    _subject: 0
+  - _newsTitle: "Ocupa\xE7\xE3o se aproxima de seu objetivo"
+    _newsMessage: "Alunos conseguem se organizar contra o governo na escola situada
+      na zona leste da cidade. A ocupa\xE7\xE3o vem alcan\xE7ando uma organiza\xE7\xE3o
+      pouco esperada do grupo de estudantes. Continuando nesse caminho, a ocupa\xE7\xE3o
+      tem tudo para ser um grande sucesso, alcan\xE7ando seu objetivo"
+    _position: 0
+    _type: 1
+    _subject: 0
+  - _newsTitle: "Ocupa\xE7\xE3o ou s\xF3 uma divers\xE3o estudantil?"
+    _newsMessage: "A ocupa\xE7\xE3o da zona leste, que parecia somente mais uma, se
+      transformou em divers\xE3o para os alunos. Al\xE9m de quebrar partes e objetos
+      da escola, eles festejam todos os dias entre si, esquecendo o clima de protesto.
+      Uma ocupa\xE7\xE3o que parece perdida e se transformou em festa para os integrantes
+      dela. Realmente parece que esse \xE9 o caminho para essas ocupa\xE7\xF5es."
+    _position: 1
+    _type: 0
+    _subject: 0
+  - _newsTitle: "Nem sempre \xE9 o momento para um protesto"
+    _newsMessage: Em um protesto que podemos classificar como vergonhoso, um grupo
+      de alunos protestou em uma avenida movimentada. O protesto pode ter sido um
+      grande erro e pode prejudicar muito o grupo de alunos que protestam contra o
+      governo
+    _position: 1
+    _type: 1
+    _subject: 1
+  - _newsTitle: "Ap\xF3s grande protesto, ocupa\xE7\xE3o ganha for\xE7a"
+    _newsMessage: "Um grupo de alunos mostrou como realmente se faz um protesto. Al\xE9m
+      de organizado, tinha um excelente n\xFAmero de integrantes junto ao grupo. A
+      popula\xE7\xE3o achou o protesto v\xE1lido e assim a aceita\xE7\xE3o popular
+      da ocupa\xE7\xE3o cresceu consideravelmente. "
+    _position: 0
+    _type: 1
+    _subject: 1
+  - _newsTitle: Uma fraca entrevista, para um fraco momento
+    _newsMessage: "Representantes dos alunos d\xE3o uma entrevista que poderia ter
+      sido muito boa, se n\xE3o fossem os grandes erros durante a entrevista. Utilizando
+      muitas vezes exemplos desnecess\xE1rios e desviando de algumas perguntas, a
+      entrevista foi um total fracasso."
+    _position: 1
+    _type: 1
+    _subject: 2
+  - _newsTitle: O grande sucesso na entrevista dos alunos
+    _newsMessage: "Em uma entrevista muito s\xF3lida e consciente, representantes
+      dos alunos conseguem trazer a popula\xE7\xE3o para o seu lado. Um dos temas
+      debatidos foi a \xF3tima organiza\xE7\xE3o e uni\xE3o que os ocupantes da escola
+      est\xE3o tendo. Continuando assim essa ocupa\xE7\xE3o tem tudo para ser um grande
+      atingir seus objetivos"
+    _position: 0
+    _type: 1
+    _subject: 2
+  _firstNews:
+    _newsTitle: Alunos ocupam escola popular na zona leste da cidade
+    _newsMessage: "Ap\xF3s o an\xFAncio da reorganiza\xE7\xE3o escolar, grupo de alunos
+      ocupa escola. Eles chegaram logo pela manh\xE3 e continuam l\xE1 at\xE9 o momento.
+      Os alunos protestam contra o fechamento das escolas. "
+    _position: 2
+    _type: 1
+    _subject: 0
+  _winNews:
+    _newsTitle: "Ocupa\xE7\xF5es Vencem"
+    _newsMessage: "As ocupa\xE7\xF5es que tomaram o Estado vencem e conseguem seu
+      objetivo: o cancelamento completo da reestrutura\xE7\xE3o e anistia para os
+      presos em protestos."
+    _position: 2
+    _type: 1
+    _subject: 0
+  _gameOverNews:
+    _newsTitle: "Governador vende a ocupa\xE7\xE3o \xE0 for\xE7a"
+    _newsMessage: "O governador do estado conseguiu, a for\xE7a, entrar e desocupar
+      a principal escola sob o controle dos alunos. As ocupa\xE7\xF5es sofreram uma
+      grande derrota."
+    _position: 1
+    _type: 1
+    _subject: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 178710}
+  m_IsPrefabParent: 1

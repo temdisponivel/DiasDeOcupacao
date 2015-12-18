@@ -148,40 +148,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 44740855}
---- !u!1 &66853669
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 66853670}
-  m_Layer: 0
-  m_Name: Days
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &66853670
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66853669}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 866179053}
-  - {fileID: 1649764729}
-  m_Father: {fileID: 1692073609}
-  m_RootOrder: 2
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -137, y: 167.619995}
-  m_SizeDelta: {x: 73, y: 27.75}
-  m_Pivot: {x: .5, y: .5}
 --- !u!1 &107269922
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,72 +759,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481804849}
---- !u!1 &623688473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 623688474}
-  - 222: {fileID: 623688476}
-  - 114: {fileID: 623688475}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &623688474
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 623688473}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 797792273}
-  m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &623688475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 623688473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Iniciar dia
---- !u!222 &623688476
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 623688473}
 --- !u!1 &644460119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,121 +962,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f6b8ebbcbb94e714e97ea19fd08c8875, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &797792272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 797792273}
-  - 222: {fileID: 797792276}
-  - 114: {fileID: 797792275}
-  - 114: {fileID: 797792274}
-  m_Layer: 0
-  m_Name: BtnInitiateDay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &797792273
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797792272}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 623688474}
-  m_Father: {fileID: 1692073609}
-  m_RootOrder: 3
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 104, y: -145}
-  m_SizeDelta: {x: 87, y: 30}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &797792274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797792272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
-    m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 797792275}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1496342713}
-        m_MethodName: StartActivities
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &797792275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797792272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &797792276
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797792272}
 --- !u!1 &820547260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &820547261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,74 +1084,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 854461465}
---- !u!1 &866179052
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 866179053}
-  - 222: {fileID: 866179055}
-  - 114: {fileID: 866179054}
-  m_Layer: 0
-  m_Name: Label
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &866179053
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866179052}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 66853670}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -10.3999996, y: -5.80000019}
-  m_SizeDelta: {x: 43.5, y: 29.5}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &866179054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866179052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Dia:
-
-'
---- !u!222 &866179055
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 866179052}
 --- !u!1 &937703106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1591,92 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1125794008}
+--- !u!1001 &1180170326
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1251337357}
+    m_Modifications:
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 346
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 363
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Pivot.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Pivot.y
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11423886, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1496342713}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1208442427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,72 +2019,12 @@ MonoBehaviour:
   m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
---- !u!1 &1357301646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1357301647}
-  - 222: {fileID: 1357301649}
-  - 114: {fileID: 1357301648}
-  m_Layer: 0
-  m_Name: Title
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1357301647
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1357301646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1692073609}
-  m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 4, y: 120}
-  m_SizeDelta: {x: 312, y: 58}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1357301648
+--- !u!114 &1357301648 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1357301646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11433104, guid: 2f763df64c66c3b4296e7c281a6cc71d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1180170326}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: O grande sucesso na entrevista dos alunos
---- !u!222 &1357301649
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1357301646}
 --- !u!1 &1471816678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,164 +2062,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -173}
   m_SizeDelta: {x: 728, y: 64}
   m_Pivot: {x: .5, y: .5}
---- !u!1 &1496342712
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 171144, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-  m_PrefabInternal: {fileID: 1762913023}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1496342714}
-  - 114: {fileID: 1496342713}
-  m_Layer: 0
-  m_Name: NewsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1496342713
+--- !u!114 &1496342713 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b,
+  m_PrefabParentObject: {fileID: 11419740, guid: 75de98093115bc64fbee3e610d66ed80,
     type: 2}
   m_PrefabInternal: {fileID: 1762913023}
-  m_GameObject: {fileID: 1496342712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 456fd8381ac3c4f42916d1a27ca55777, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _newsObject: {fileID: 1692073608}
-  _newsDay: {fileID: 1649764730}
-  _newsTitle: {fileID: 1357301648}
-  _newsMessage: {fileID: 1679577770}
-  _news:
-  - _newsTitle: "Ocupa\xE7\xE3o mal organizada desagrada popula\xE7\xE3o"
-    _newsMessage: "Alunos mal organizados e uma escola completamente suja e destru\xEDda.
-      Isso \xE9 mais um dia de uma ocupa\xE7\xE3o que poderia dar muito certo, mas
-      vem se transformando em uma trag\xE9dia e desagradando a popula\xE7\xE3o. Correm
-      boatos que alguns ocupantes come\xE7aram a desistir da ocupa\xE7\xE3o."
-    _position: 1
-    _type: 1
-    _subject: 0
-  - _newsTitle: "Alunos se complicam na ocupa\xE7\xE3o da zona leste"
-    _newsMessage: "Nada do planejado e esperado vem acontecendo na ocupa\xE7\xE3o
-      de uma das maiores ocupa\xE7\xF5es de escolas da cidade. Os alunos v\xE3o dando
-      uma li\xE7\xE3o de como n\xE3o fazer uma ocupa\xE7\xE3o. Com um gerenciamento
-      muito mal guiado. Pensamos que a ocupa\xE7\xE3o n\xE3o conseguir\xE1 sobreviver
-      por muito tempo."
-    _position: 1
-    _type: 1
-    _subject: 0
-  - _newsTitle: "Situa\xE7\xE3o de uma das principais ocupa\xE7\xF5es da cidade piora"
-    _newsMessage: "A ocupa\xE7\xE3o vem desmoronando, o descaso dos ocupantes na escola
-      vem sendo um dos principais fatores para tudo isso. Ou as atitudes dos alunos
-      mudam ou essa ser\xE1 mais uma ocupa\xE7\xE3o perdida"
-    _position: 1
-    _type: 1
-    _subject: 0
-  - _newsTitle: "Sucesso? Talvez seja a palavra para essa ocupa\xE7\xE3o"
-    _newsMessage: "Centenas de alunos, unidos todos por uma causa conseguem uma ocupa\xE7\xE3o
-      muito bem organizada. Protestando e alcan\xE7ando, at\xE9 ent\xE3o, seus objetivos.
-      Se continuar assim a ocupa\xE7\xE3o tem tudo para ser um grande sucesso. A pergunta
-      que fica \xE9 se eles v\xE3o conseguir manter a organiza\xE7\xE3o"
-    _position: 0
-    _type: 1
-    _subject: 0
-  - _newsTitle: "Alunos unidos continuam em ocupa\xE7\xE3o"
-    _newsMessage: "Alunos est\xE3o organizados e estruturados dentro das ocupa\xE7\xF5es.
-      Agora resta saber at\xE9 onde chegar\xE1 esse grupo"
-    _position: 0
-    _type: 1
-    _subject: 0
-  - _newsTitle: "Ocupa\xE7\xE3o se aproxima de seu objetivo"
-    _newsMessage: "Alunos conseguem se organizar contra o governo na escola situada
-      na zona leste da cidade. A ocupa\xE7\xE3o vem alcan\xE7ando uma organiza\xE7\xE3o
-      pouco esperada do grupo de estudantes. Continuando nesse caminho, a ocupa\xE7\xE3o
-      tem tudo para ser um grande sucesso, alcan\xE7ando seu objetivo"
-    _position: 0
-    _type: 1
-    _subject: 0
-  - _newsTitle: "Ocupa\xE7\xE3o ou s\xF3 uma divers\xE3o estudantil?"
-    _newsMessage: "A ocupa\xE7\xE3o da zona leste, que parecia somente mais uma, se
-      transformou em divers\xE3o para os alunos. Al\xE9m de quebrar partes e objetos
-      da escola, eles festejam todos os dias entre si, esquecendo o clima de protesto.
-      Uma ocupa\xE7\xE3o que parece perdida e se transformou em festa para os integrantes
-      dela. Realmente parece que esse \xE9 o caminho para essas ocupa\xE7\xF5es."
-    _position: 1
-    _type: 0
-    _subject: 0
-  - _newsTitle: "Nem sempre \xE9 o momento para um protesto"
-    _newsMessage: Em um protesto que podemos classificar como vergonhoso, um grupo
-      de alunos protestou em uma avenida movimentada. O protesto pode ter sido um
-      grande erro e pode prejudicar muito o grupo de alunos que protestam contra o
-      governo
-    _position: 1
-    _type: 1
-    _subject: 1
-  - _newsTitle: "Ap\xF3s grande protesto, ocupa\xE7\xE3o ganha for\xE7a"
-    _newsMessage: "Um grupo de alunos mostrou como realmente se faz um protesto. Al\xE9m
-      de organizado, tinha um excelente n\xFAmero de integrantes junto ao grupo. A
-      popula\xE7\xE3o achou o protesto v\xE1lido e assim a aceita\xE7\xE3o popular
-      da ocupa\xE7\xE3o cresceu consideravelmente. "
-    _position: 0
-    _type: 1
-    _subject: 1
-  - _newsTitle: Uma fraca entrevista, para um fraco momento
-    _newsMessage: "Representantes dos alunos d\xE3o uma entrevista que poderia ter
-      sido muito boa, se n\xE3o fossem os grandes erros durante a entrevista. Utilizando
-      muitas vezes exemplos desnecess\xE1rios e desviando de algumas perguntas, a
-      entrevista foi um total fracasso."
-    _position: 1
-    _type: 1
-    _subject: 2
-  - _newsTitle: O grande sucesso na entrevista dos alunos
-    _newsMessage: "Em uma entrevista muito s\xF3lida e consciente, representantes
-      dos alunos conseguem trazer a popula\xE7\xE3o para o seu lado. Um dos temas
-      debatidos foi a \xF3tima organiza\xE7\xE3o e uni\xE3o que os ocupantes da escola
-      est\xE3o tendo. Continuando assim essa ocupa\xE7\xE3o tem tudo para ser um grande
-      atingir seus objetivos"
-    _position: 0
-    _type: 1
-    _subject: 2
-  _firstNews:
-    _newsTitle: Alunos ocupam escola popular na zona leste da cidade
-    _newsMessage: "Ap\xF3s o an\xFAncio da reorganiza\xE7\xE3o escolar, grupo de alunos
-      ocupa escola. Eles chegaram logo pela manh\xE3 e continuam l\xE1 at\xE9 o momento.
-      Os alunos protestam contra o fechamento das escolas. "
-    _position: 2
-    _type: 1
-    _subject: 0
-  _lastNews:
-    _newsTitle: "Ocupa\xE7\xF5es vencem. Democracia vende."
-    _newsMessage: "Governador do estado anuncia o cancelamento permanente da reestrutura\xE7\xE3o
-      escolar. Al\xE9m disso, prometeu anistia para os presos e puni\xE7\xE3o para
-      os pol\xEDciais truculentos. As ocupa\xE7\xF5es venceram e os jovens mostraram
-      o significado da paralavra \"democracia\"."
-    _position: 2
-    _type: 1
-    _subject: 0
-  _gameOverNews:
-    _newsTitle: "Governador vende a ocupa\xE7\xE3o \xE0 for\xE7a"
-    _newsMessage: "O governador do estado conseguiu, a for\xE7a, entrar e desocupar
-      a principal escola sob o controle dos alunos. As ocupa\xE7\xF5es sofreram uma
-      grande derrota."
-    _position: 1
-    _type: 1
-    _subject: 0
---- !u!4 &1496342714
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-  m_PrefabInternal: {fileID: 1762913023}
-  m_GameObject: {fileID: 1496342712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .55562377, y: -1.47578716, z: -9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
 --- !u!1 &1503528709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,222 +2372,27 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1611228451}
---- !u!1 &1649764728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1649764729}
-  - 222: {fileID: 1649764731}
-  - 114: {fileID: 1649764730}
-  m_Layer: 0
-  m_Name: Day
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1649764729
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649764728}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 66853670}
-  m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .716216147}
-  m_AnchoredPosition: {x: -.600009441, y: -2.79999995}
-  m_SizeDelta: {x: 23.8999996, y: 10.3000002}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1649764730
+--- !u!114 &1649764730 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649764728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11484816, guid: 2f763df64c66c3b4296e7c281a6cc71d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1180170326}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 1
---- !u!222 &1649764731
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649764728}
---- !u!1 &1679577768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1679577769}
-  - 222: {fileID: 1679577771}
-  - 114: {fileID: 1679577770}
-  m_Layer: 0
-  m_Name: Message
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1679577769
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1679577768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1692073609}
-  m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 4, y: -8}
-  m_SizeDelta: {x: 312, y: 244}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1679577770
+--- !u!114 &1679577770 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1679577768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11404310, guid: 2f763df64c66c3b4296e7c281a6cc71d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1180170326}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Em uma entrevista muito s\xF3lida e consciente, representantes dos alunos
-    conseguem trazer a popula\xE7\xE3o para o seu lado. Um dos temas debatidos foi
-    a \xF3tima organiza\xE7\xE3o e uni\xE3o que os ocupantes da escola est\xE3o tendo.
-    Continuando assim essa ocupa\xE7\xE3o tem tudo para ser um grande atingir seus
-    objetivos."
---- !u!222 &1679577771
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1679577768}
---- !u!1 &1692073608
+--- !u!1 &1692073608 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 1692073609}
-  - 222: {fileID: 1692073611}
-  - 114: {fileID: 1692073610}
-  - 114: {fileID: 1692073612}
-  m_Layer: 0
-  m_Name: News
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1692073609
+  m_PrefabParentObject: {fileID: 139450, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+  m_PrefabInternal: {fileID: 1180170326}
+--- !u!224 &1692073609 stripped
 RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692073608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1357301647}
-  - {fileID: 1679577769}
-  - {fileID: 66853670}
-  - {fileID: 797792273}
-  m_Father: {fileID: 1251337357}
-  m_RootOrder: 2
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -4, y: 4}
-  m_SizeDelta: {x: 346, y: 363}
-  m_Pivot: {x: .5, y: .5}
---- !u!114 &1692073610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692073608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .933823526, g: .933823526, b: .933823526, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1692073611
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692073608}
---- !u!114 &1692073612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692073608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: .765999973}
-  m_EffectDistance: {x: 10, y: -10}
-  m_UseGraphicAlpha: 1
+  m_PrefabParentObject: {fileID: 22412736, guid: 2f763df64c66c3b4296e7c281a6cc71d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1180170326}
 --- !u!1 &1721335433
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,286 +2530,56 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalPosition.x
       value: .55562377
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalPosition.y
       value: -1.47578716
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalPosition.z
       value: -9
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 454640, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 417592, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 11419740, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: _newsObject
       value: 
       objectReference: {fileID: 1692073608}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 11419740, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: _newsDay
       value: 
       objectReference: {fileID: 1649764730}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 11419740, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: _newsTitle
       value: 
       objectReference: {fileID: 1357301648}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+    - target: {fileID: 11419740, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
       propertyPath: _newsMessage
       value: 
       objectReference: {fileID: 1679577770}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _firstNews._newsTitle
-      value: Alunos ocupam escola popular na zona leste da cidade
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _firstNews._newsMessage
-      value: "Ap\xF3s o an\xFAncio da reorganiza\xE7\xE3o escolar, grupo de alunos
-        ocupa escola. Eles chegaram logo pela manh\xE3 e continuam l\xE1 at\xE9 o
-        momento. Os alunos protestam contra o fechamento das escolas. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[0]._newsTitle
-      value: "Ocupa\xE7\xE3o mal organizada desagrada popula\xE7\xE3o"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[0]._newsMessage
-      value: "Alunos mal organizados e uma escola completamente suja e destru\xEDda.
-        Isso \xE9 mais um dia de uma ocupa\xE7\xE3o que poderia dar muito certo, mas
-        vem se transformando em uma trag\xE9dia e desagradando a popula\xE7\xE3o.
-        Correm boatos que alguns ocupantes come\xE7aram a desistir da ocupa\xE7\xE3o."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[0]._position
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[1]._newsTitle
-      value: "Alunos se complicam na ocupa\xE7\xE3o da zona leste"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[1]._newsMessage
-      value: "Nada do planejado e esperado vem acontecendo na ocupa\xE7\xE3o de uma
-        das maiores ocupa\xE7\xF5es de escolas da cidade. Os alunos v\xE3o dando uma
-        li\xE7\xE3o de como n\xE3o fazer uma ocupa\xE7\xE3o. Com um gerenciamento
-        muito mal guiado. Pensamos que a ocupa\xE7\xE3o n\xE3o conseguir\xE1 sobreviver
-        por muito tempo."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[1]._position
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[2]._newsTitle
-      value: "Situa\xE7\xE3o de uma das principais ocupa\xE7\xF5es da cidade piora"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[2]._newsMessage
-      value: "A ocupa\xE7\xE3o vem desmoronando, o descaso dos ocupantes na escola
-        vem sendo um dos principais fatores para tudo isso. Ou as atitudes dos alunos
-        mudam ou essa ser\xE1 mais uma ocupa\xE7\xE3o perdida"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[2]._position
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[3]._newsTitle
-      value: "Sucesso? Talvez seja a palavra para essa ocupa\xE7\xE3o"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[3]._newsMessage
-      value: "Centenas de alunos, unidos todos por uma causa conseguem uma ocupa\xE7\xE3o
-        muito bem organizada. Protestando e alcan\xE7ando, at\xE9 ent\xE3o, seus objetivos.
-        Se continuar assim a ocupa\xE7\xE3o tem tudo para ser um grande sucesso. A
-        pergunta que fica \xE9 se eles v\xE3o conseguir manter a organiza\xE7\xE3o"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[3]._position
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[4]._newsTitle
-      value: "Alunos unidos continuam em ocupa\xE7\xE3o"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[4]._newsMessage
-      value: "Alunos est\xE3o organizados e estruturados dentro das ocupa\xE7\xF5es.
-        Agora resta saber at\xE9 onde chegar\xE1 esse grupo"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[4]._position
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[5]._newsTitle
-      value: "Ocupa\xE7\xE3o se aproxima de seu objetivo"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[5]._newsMessage
-      value: "Alunos conseguem se organizar contra o governo na escola situada na
-        zona leste da cidade. A ocupa\xE7\xE3o vem alcan\xE7ando uma organiza\xE7\xE3o
-        pouco esperada do grupo de estudantes. Continuando nesse caminho, a ocupa\xE7\xE3o
-        tem tudo para ser um grande sucesso, alcan\xE7ando seu objetivo"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[5]._position
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[6]._newsTitle
-      value: "Ocupa\xE7\xE3o ou s\xF3 uma divers\xE3o estudantil?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[6]._newsMessage
-      value: "A ocupa\xE7\xE3o da zona leste, que parecia somente mais uma, se transformou
-        em divers\xE3o para os alunos. Al\xE9m de quebrar partes e objetos da escola,
-        eles festejam todos os dias entre si, esquecendo o clima de protesto. Uma
-        ocupa\xE7\xE3o que parece perdida e se transformou em festa para os integrantes
-        dela. Realmente parece que esse \xE9 o caminho para essas ocupa\xE7\xF5es."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[6]._position
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[6]._type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[7]._newsTitle
-      value: "Nem sempre \xE9 o momento para um protesto"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[7]._newsMessage
-      value: Em um protesto que podemos classificar como vergonhoso, um grupo de alunos
-        protestou em uma avenida movimentada. O protesto pode ter sido um grande erro
-        e pode prejudicar muito o grupo de alunos que protestam contra o governo
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[7]._position
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[7]._subject
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[8]._newsTitle
-      value: "Ap\xF3s grande protesto, ocupa\xE7\xE3o ganha for\xE7a"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[8]._newsMessage
-      value: "Um grupo de alunos mostrou como realmente se faz um protesto. Al\xE9m
-        de organizado, tinha um excelente n\xFAmero de integrantes junto ao grupo.
-        A popula\xE7\xE3o achou o protesto v\xE1lido e assim a aceita\xE7\xE3o popular
-        da ocupa\xE7\xE3o cresceu consideravelmente. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[8]._position
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[8]._subject
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[9]._newsTitle
-      value: Uma fraca entrevista, para um fraco momento
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[9]._newsMessage
-      value: "Representantes dos alunos d\xE3o uma entrevista que poderia ter sido
-        muito boa, se n\xE3o fossem os grandes erros durante a entrevista. Utilizando
-        muitas vezes exemplos desnecess\xE1rios e desviando de algumas perguntas,
-        a entrevista foi um total fracasso."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[9]._position
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[9]._subject
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[10]._newsTitle
-      value: O grande sucesso na entrevista dos alunos
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[10]._newsMessage
-      value: "Em uma entrevista muito s\xF3lida e consciente, representantes dos alunos
-        conseguem trazer a popula\xE7\xE3o para o seu lado. Um dos temas debatidos
-        foi a \xF3tima organiza\xE7\xE3o e uni\xE3o que os ocupantes da escola est\xE3o
-        tendo. Continuando assim essa ocupa\xE7\xE3o tem tudo para ser um grande atingir
-        seus objetivos"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[10]._position
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[10]._subject
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[11]._position
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _news.Array.data[11]._type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _lastNews._newsTitle
-      value: "Ocupa\xE7\xF5es vencem. Democracia vende."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _lastNews._newsMessage
-      value: "Governador do estado anuncia o cancelamento permanente da reestrutura\xE7\xE3o
-        escolar. Al\xE9m disso, prometeu anistia para os presos e puni\xE7\xE3o para
-        os pol\xEDciais truculentos. As ocupa\xE7\xF5es venceram e os jovens mostraram
-        o significado da paralavra \"democracia\"."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _gameOverNews._newsTitle
-      value: "Governador vende a ocupa\xE7\xE3o \xE0 for\xE7a"
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _gameOverNews._newsMessage
-      value: "O governador do estado conseguiu, a for\xE7a, entrar e desocupar a principal
-        escola sob o controle dos alunos. As ocupa\xE7\xF5es sofreram uma grande derrota."
-      objectReference: {fileID: 0}
-    - target: {fileID: 11406924, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
-      propertyPath: _gameOverNews._position
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7c15e725c5bab0a4e88866f0b70ce54b, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 75de98093115bc64fbee3e610d66ed80, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1823632312
 GameObject:

@@ -45,7 +45,6 @@ namespace Assets.Script.Misc
 
             for (float i = this._imageFade.color.a, percent = this._percentPerFrame / 100f; fadein ? i <= 1 : i >= 0; i += (fadein ? percent : -percent))
             {
-                Debug.Log(i);
                 this._imageFade.color = new Color { r = this._imageFade.color.r, g = this._imageFade.color.g, b = this._imageFade.color.b, a = i };
                 yield return 1;
             }
