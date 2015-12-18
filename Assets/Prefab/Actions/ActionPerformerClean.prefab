@@ -90,12 +90,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e72dc3175e9d48e4a9b6ea97b2208b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points: 3
+  _keyVelocity: 0
   _secondsPerKey: 1
   _targetKeys: 3
   _failureKeys: 3
   _currentKey: 97
   _textKeyPerform: {fileID: 11416132}
+  _type: 0
 --- !u!114 &11429768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,7 +243,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 116002}

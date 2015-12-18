@@ -28,6 +28,7 @@ namespace Assets.Script.Misc
         /// </summary>
         public void OptionSelected(GameObject action)
         {
+            GameManager.Instance.Day[action.GetComponent<ActionPerformer>()._type] = true;
             this.CloseOption();
             GameObject.Instantiate(action);
         }
@@ -39,6 +40,7 @@ namespace Assets.Script.Misc
         {
             FadeManager.Instance.FadeIn();
             this.StartCoroutine(this.WaitToReturn("Protest"));
+            GameManager.Instance.Day[ActionPerformer.Actions.Protest] = true;
         }
 
         /// <summary>
@@ -48,6 +50,15 @@ namespace Assets.Script.Misc
         {
             FadeManager.Instance.FadeIn();
             this.StartCoroutine(this.WaitToReturn("Interview"));
+            GameManager.Instance.Day[ActionPerformer.Actions.Interview] = true;
+        }
+
+        /// <summary>
+        /// Finish this day.
+        /// </summary>
+        public void FinishDay()
+        {
+            GameManager.Instance.FinishDay();
         }
 
         /// <summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Assets.Script.Action.ActionPerformer
+namespace Assets.Script.Action
 {
     /// <summary>
     /// Resist attack of police action

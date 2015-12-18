@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script.Misc;
+using Assets.Script.Action;
 
 namespace Assets.Script.Ocupation
 {
@@ -33,8 +34,6 @@ namespace Assets.Script.Ocupation
                 GameObject.Destroy(this.gameObject);
                 return;
             }
-
-
         }
 
         /// <summary>
@@ -114,7 +113,7 @@ namespace Assets.Script.Ocupation
         {
             this.Day = new Day();
             this.Day.Started = true;
-            Action.ActionPerformer.ActionPerformer.DifficultyCoefficient = 1;
+            ActionPerformer.DifficultyCoefficient = 1;
         }
     }
 }

@@ -148,12 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb43f7f653901c40ba6858aa7398802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points: 3
+  _keyVelocity: 0
   _secondsPerKey: 1
   _targetKeys: 5
   _failureKeys: 5
   _currentKey: 97
   _textKeyPerform: {fileID: 11404924}
+  _type: 5
 --- !u!222 &22290228
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -242,7 +243,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _type
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107682}

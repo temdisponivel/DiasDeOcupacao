@@ -4,20 +4,36 @@ using System;
 using UnityEngine.UI;
 using Assets.Script.Misc;
 
-namespace Assets.Script.Action.ActionPerformer
+namespace Assets.Script.Action
 {
     /// <summary>
     /// Class that performes a action.
     /// </summary>
     public class ActionPerformer : MonoBehaviour
     {
+        /// <summary>
+        /// Enumerator for the possible actions.
+        /// </summary>
+        [Serializable]
+        public enum Actions
+        {
+            Clean,
+            Cook,
+            Study,
+            Interview,
+            Protest,
+            ResistAttack,
+        }
+
         static public float DifficultyCoefficient { get; set; }
+        static public bool InAction { get; set; }
         public float _keyVelocity = 0f;
         public float _secondsPerKey = 0f;
         public int _targetKeys = 0;
         public int _failureKeys = 0;
         public KeyCode _currentKey = KeyCode.A;
         public Text _textKeyPerform = null;
+        public Actions _type = Actions.Cook;
         private float _lastKeyChange = 0f;
 
         public void Start()
@@ -27,6 +43,7 @@ namespace Assets.Script.Action.ActionPerformer
             this._targetKeys += (int) ActionPerformer.DifficultyCoefficient;
             this._failureKeys += (int) ActionPerformer.DifficultyCoefficient;
             this.ChangeKey();
+            ActionPerformer.InAction = true;
         }
 
         virtual protected void Update()
@@ -71,6 +88,7 @@ namespace Assets.Script.Action.ActionPerformer
         virtual protected void FinishAction(bool success)
         {
             GameObject.Destroy(this.gameObject);
+            ActionPerformer.InAction = false;
         }
 
         /// <summary>

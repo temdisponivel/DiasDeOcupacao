@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Script.Action;
 
 namespace Assets.Script.Misc
 {
@@ -21,7 +22,7 @@ namespace Assets.Script.Misc
 
         void OnMouseUp()
         {
-            if (!OptionsManager.Instance.IsOptOpen)
+            if (!OptionsManager.Instance.IsOptOpen && !ActionPerformer.InAction)
             {
                 OptionsManager.Instance.OpenOption();
             }
