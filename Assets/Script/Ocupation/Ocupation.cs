@@ -23,11 +23,13 @@ namespace Assets.Script.Ocupation
         public Image _imageDay = null;
 
         private int _lastPopularAdeption = 0;
-
+        
         void Start()
         {
+            Ocupation.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
             this._lastPopularAdeption = GameManager.Instance._occupationStatus._popularAdeptance;
+            this.InitiateDay();
         }
 
         /// <summary>
@@ -43,20 +45,23 @@ namespace Assets.Script.Ocupation
 
             if (this._lastPopularAdeption < GameManager.Instance._occupationStatus._popularAdeptance)
             {
-                Debug.Log("AUMENTO");
                 var groups = this._groups.FindAll(g => g.activeSelf == false);
                 Debug.Log(groups.Count);
                 groups[UnityEngine.Random.Range(0, groups.Count)].SetActive(true);
             }
             else if (this._lastPopularAdeption > GameManager.Instance._occupationStatus._popularAdeptance)
             {
-                Debug.Log("DIMINUIU");
                 var groups = this._groups.FindAll(g => g.activeSelf == true);
                 Debug.Log(groups.Count);
                 groups[UnityEngine.Random.Range(0, groups.Count)].SetActive(false);
             }
 
             this._lastPopularAdeption = GameManager.Instance._occupationStatus._popularAdeptance;
+        }
+
+        public void OnDestroy()
+        {
+            GameManager.Instance.RemoveInitiateDayCallback(this.InitiateDay);
         }
     }
 }

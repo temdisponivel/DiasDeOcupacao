@@ -259,6 +259,24 @@ namespace Assets.Script.Ocupation
         }
 
         /// <summary>
+        /// Remove a callback to receive message when a day has finish.
+        /// </summary>
+        /// <param name="action">Callback to call.</param>
+        public void RemoveFinishDayCallback(System.Action action)
+        {
+            _finishCallbacksDay.Remove(action);
+        }
+
+        /// <summary>
+        /// Remove a callback to receive message when a day has initiated.
+        /// </summary>
+        /// <param name="action">Callback to call.</param>
+        public void RemoveInitiateDayCallback(System.Action action)
+        {
+            _initiatedCallbacksDay.Remove(action);
+        }
+
+        /// <summary>
         /// End this game with a given state.
         /// </summary>
         public void GameOver()
@@ -282,6 +300,7 @@ namespace Assets.Script.Ocupation
             this.Day.Started = true;
             NewsManager.ShowFirst = true;
             Day.Number = 1;
+            ActionPerformer._upSubstractor = 0;
             this.ShouldProtest = true;
             this.ShouldInterview = false;
         }

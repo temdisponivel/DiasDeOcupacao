@@ -153,5 +153,12 @@ namespace Assets.Script.News
                 }
             }
         }
+
+        public void OnDestroy()
+        {
+            Debug.Log("REMOVE");
+            GameManager.Instance.RemoveInitiateDayCallback(this.InitiateDay);
+            GameManager.Instance.RemoveFinishDayCallback(this.FinishDay);
+        }
     }
 }

@@ -144,5 +144,10 @@ namespace Assets.Script.Misc
                 button._object.SetActive(true);
             }
         }
+
+        public void OnDestroy()
+        {
+            GameManager.Instance.RemoveInitiateDayCallback(this.InitiateDayCallback);
+        }
     }
 }
