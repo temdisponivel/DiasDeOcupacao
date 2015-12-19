@@ -47,7 +47,7 @@ namespace Assets.Script.Misc
         public void OptionSelected(GameObject action)
         {
             ActionPerformer.Actions type = action.GetComponent<ActionPerformer>()._type;
-            GameObject.Instantiate(action);
+            GameObject.Instantiate(action).transform.SetParent(this.gameObject.transform, false);
 
             foreach (var button in this._buttonAction)
             {
@@ -127,8 +127,11 @@ namespace Assets.Script.Misc
         /// </summary>
         public void CloseOption()
         {
-            _options.SetActive(false);
-            this.IsOptOpen = false;
+            if (_options != null)
+            {
+                _options.SetActive(false);
+                this.IsOptOpen = false;
+            }
         }
 
         /// <summary>

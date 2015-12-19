@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Script.Misc
 {
@@ -32,7 +33,7 @@ namespace Assets.Script.Misc
         {
             get
             {
-                return (this._actions[(int)type].HasValue? this._actions[(int)type].Value : false);
+                return (this._actions[(int)type].HasValue ? this._actions[(int)type].Value : false);
             }
             set
             {
@@ -64,13 +65,13 @@ namespace Assets.Script.Misc
             bool finished = true;
             for (int i = 0; i < this._actions.Length; i++)
             {
-                if (this._actions[i] == null)
+                if (!this._actions[i].HasValue)
                 {
                     finished = false;
                     break;
                 }
             }
-
+            
             if (finished)
             {
                 GameManager.Instance.FinishDay();

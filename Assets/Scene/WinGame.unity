@@ -986,8 +986,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
-    m_FontSize: 18
+    m_Font: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1041,8 +1041,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 214, y: 180}
+  m_AnchoredPosition: {x: .300003529, y: -2}
+  m_SizeDelta: {x: 246.600006, y: 205}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &617173299
 MonoBehaviour:
@@ -1057,10 +1057,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .213235319, g: .213235319, b: .213235319, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
-    m_FontSize: 19
+    m_Font: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2387,8 +2387,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
-    m_FontSize: 18
+    m_Font: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2398,7 +2398,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ocupar outra escola
+  m_Text: Reiniciar
 --- !u!222 &1524075805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3136,9 +3136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_Font: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e, type: 3}
     m_FontSize: 21
     m_FontStyle: 1
     m_BestFit: 0
@@ -3344,7 +3344,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 83.5999985, y: -142}
+  m_AnchoredPosition: {x: 77.0000076, y: -142}
   m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2092583635

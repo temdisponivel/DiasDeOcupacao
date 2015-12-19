@@ -47,6 +47,7 @@ namespace Assets.Script.Ocupation
             }
 
             this.WithSound = true;
+            this.Day = new Day();
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Assets.Script.Ocupation
 
             this.ShouldInterview = false;            
 
-            ActionPerformer.DifficultyCoefficient += .2f;
+            ActionPerformer._upSubstractor += 1f;
         }
 
         /// <summary>
@@ -278,10 +279,8 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void StartGamePlay()
         {
-            this.Day = new Day();
             this.Day.Started = true;
             NewsManager.ShowFirst = true;
-            ActionPerformer.DifficultyCoefficient = 1;
             Day.Number = 1;
             this.ShouldProtest = true;
             this.ShouldInterview = false;

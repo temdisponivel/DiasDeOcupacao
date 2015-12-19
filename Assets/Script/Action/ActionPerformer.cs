@@ -25,46 +25,27 @@ namespace Assets.Script.Action
             ResistAttack,
         }
 
-        static public float DifficultyCoefficient { get; set; }
+        static public float _upSubstractor = 0;
         static public bool InAction { get; set; }
-        public float _keyVelocity = 0f;
-        public float _secondsPerKey = 0f;
-        public int _targetKeys = 0;
-        public int _failureKeys = 0;
-        public KeyCode _currentKey = KeyCode.A;
-        public Text _textKeyPerform = null;
+        public Slider _slider = null;
+        public float _downVelocity = 1;
+        public float _upMultiplier = 10;
+        public float _upVelocity = 1;
         public Actions _type = Actions.Cook;
-        private float _lastKeyChange = 0f;
 
         virtual public void Start()
         {
-            this._secondsPerKey /= ActionPerformer.DifficultyCoefficient;
-            this._keyVelocity *= ActionPerformer.DifficultyCoefficient;
-            this._targetKeys += (int) ActionPerformer.DifficultyCoefficient;
-            this._failureKeys += (int) ActionPerformer.DifficultyCoefficient;
-            this.ChangeKey();
+            this._upVelocity = this._downVelocity * (this._upMultiplier - _upSubstractor);
             ActionPerformer.InAction = true;
-            OptionsManager.Instance.CloseOption();
+            if (OptionsManager.Instance != null)
+            {
+                OptionsManager.Instance.CloseOption();
+            }
         }
 
-        virtual protected void Update()
+        virtual protected void FixedUpdate()
         {
-            if (Time.time - this._lastKeyChange >= this._secondsPerKey)
-            {
-                this._failureKeys--;
-                this.ChangeKey();
-            }
-            else if (Input.anyKeyDown && !Input.GetKeyDown(_currentKey))
-            {
-                this._failureKeys--;
-                this.ChangeKey();
-            }
-            else if (Input.GetKeyDown(_currentKey))
-            {
-                this._targetKeys--;
-                this.ChangeKey();
-            }
-
+            this._slider.value -= this._downVelocity * Time.deltaTime;
             this.ValidFinish();
         }
 
@@ -73,11 +54,11 @@ namespace Assets.Script.Action
         /// </summary>
         private void ValidFinish()
         {
-            if (this._targetKeys == 0)
+            if (this._slider.value >= this._slider.maxValue)
             {
                 this.FinishAction(true);
             }
-            else if (this._failureKeys == 0)
+            else if (this._slider.value <= this._slider.minValue)
             {
                 this.FinishAction(false);
             }
@@ -94,14 +75,12 @@ namespace Assets.Script.Action
         }
 
         /// <summary>
-        /// Changes the current key to be pressed.
+        /// OnMouseUp evento for when the player click.
         /// </summary>
-        public void ChangeKey()
+        void OnMouseUp()
         {
-            int keyIndex = UnityEngine.Random.Range(97, 123); //Min e Max of the alphabetics key code
-            this._currentKey = (KeyCode) keyIndex;
-            this._textKeyPerform.text = this._currentKey.ToString();
-            this._lastKeyChange = Time.time;
+            this._slider.value += this._upVelocity * Time.deltaTime;
+            this.ValidFinish();
         }
     }
 }

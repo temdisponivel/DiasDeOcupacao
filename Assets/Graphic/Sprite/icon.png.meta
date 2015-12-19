@@ -1,20 +1,9 @@
 fileFormatVersion: 2
-guid: daa5dfe284a36464dace87c896f1d88d
-timeCreated: 1450497353
+guid: 4b3501bb52f3dd142999ae8c0826bfd7
+timeCreated: 1450507696
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Kitchen
-    21300002: Cafeteria
-    21300004: Court
-    21300006: Library
-    21300008: PrincipalOffice
-    21300010: Bathrooms
-    21300012: School
-    21300014: Rooms
-    21300016: All
-    21300018: SchoolOpenArea
-    21300020: school_0
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -34,21 +23,21 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
+  cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -59,27 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: All
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: SchoolOpenArea
-      rect:
-        serializedVersion: 2
-        x: 1215
-        y: 0
-        width: 705
-        height: 1079
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

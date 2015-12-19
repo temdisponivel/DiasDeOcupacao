@@ -369,7 +369,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937703107}
+      - m_Target: {fileID: 1251337362}
         m_MethodName: Interview
         m_Mode: 1
         m_Arguments:
@@ -1903,7 +1903,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 937703108}
-  - 114: {fileID: 937703107}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -1911,31 +1910,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &937703107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11487776, guid: 066a2c0f3631a8a4b8cac41be7d876da,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 937703106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd5f01aba2adba45be9af07fdcaf4c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitionSeconds: 1
-  _options: {fileID: 1331329234}
-  _buttonAction:
-  - _object: {fileID: 107269922}
-    _actionType: 3
-  - _object: {fileID: 1015677786}
-    _actionType: 4
-  - _object: {fileID: 1125794008}
-    _actionType: 2
-  - _object: {fileID: 1031465166}
-    _actionType: 1
-  - _object: {fileID: 1611228451}
-    _actionType: 0
 --- !u!4 &937703108
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,7 +2249,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937703107}
+      - m_Target: {fileID: 1251337362}
         m_MethodName: Protest
         m_Mode: 1
         m_Arguments:
@@ -2395,11 +2369,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937703107}
+      - m_Target: {fileID: 1251337362}
         m_MethodName: OptionSelected
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 118936, guid: 192cc48e17782aa4ba86701db560639a,
+          m_ObjectArgument: {fileID: 170572, guid: 192cc48e17782aa4ba86701db560639a,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -2796,11 +2770,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937703107}
+      - m_Target: {fileID: 1251337362}
         m_MethodName: OptionSelected
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 126342, guid: ba1bdfb3942a97242970c7c8028bccba,
+          m_ObjectArgument: {fileID: 104564, guid: ba1bdfb3942a97242970c7c8028bccba,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -3025,22 +2999,22 @@ Prefab:
     - target: {fileID: 11411748, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070,
+      objectReference: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e,
         type: 3}
     - target: {fileID: 11433104, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070,
+      objectReference: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e,
         type: 3}
     - target: {fileID: 11484816, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070,
+      objectReference: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e,
         type: 3}
     - target: {fileID: 11404310, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070,
+      objectReference: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e,
         type: 3}
     - target: {fileID: 139450, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_IsActive
@@ -3048,7 +3022,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11433104, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11433104, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.g
@@ -3060,20 +3034,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11404310, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.r
-      value: .286764681
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11404310, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.g
-      value: .286764681
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11404310, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.b
-      value: .286764681
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11403794, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070,
+      objectReference: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e,
         type: 3}
     - target: {fileID: 11403794, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.r
@@ -3086,6 +3060,50 @@ Prefab:
     - target: {fileID: 11403794, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433104, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 22405556, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 130.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 22405556, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11404310, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411748, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411748, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411748, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484816, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484816, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484816, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11403794, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f763df64c66c3b4296e7c281a6cc71d, type: 2}
@@ -3171,6 +3189,7 @@ GameObject:
   - 114: {fileID: 1251337359}
   - 114: {fileID: 1251337358}
   - 222: {fileID: 1251337361}
+  - 114: {fileID: 1251337362}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -3263,6 +3282,30 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1251337356}
+--- !u!114 &1251337362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1251337356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd5f01aba2adba45be9af07fdcaf4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitionSeconds: 1
+  _options: {fileID: 1331329234}
+  _buttonAction:
+  - _object: {fileID: 107269922}
+    _actionType: 3
+  - _object: {fileID: 1015677786}
+    _actionType: 4
+  - _object: {fileID: 1125794008}
+    _actionType: 2
+  - _object: {fileID: 1031465166}
+    _actionType: 1
+  - _object: {fileID: 1611228451}
+    _actionType: 0
 --- !u!1 &1331329234
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,11 +3724,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937703107}
+      - m_Target: {fileID: 1251337362}
         m_MethodName: OptionSelected
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 116002, guid: 54568c569694bcb45ab4b6d9366a1d69,
+          m_ObjectArgument: {fileID: 146102, guid: 54568c569694bcb45ab4b6d9366a1d69,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
@@ -4291,7 +4334,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937703107}
+      - m_Target: {fileID: 1251337362}
         m_MethodName: FinishDay
         m_Mode: 1
         m_Arguments:
