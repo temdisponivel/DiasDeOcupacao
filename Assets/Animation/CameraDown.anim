@@ -18,13 +18,18 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: {x: 0, y: 0, z: -10}
-        inSlope: {x: 0, y: -1, z: 0}
-        outSlope: {x: 0, y: -1, z: 0}
+        inSlope: {x: 0, y: -1.33000004, z: 0}
+        outSlope: {x: 0, y: -1.33000004, z: 0}
+        tangentMode: 0
+      - time: 18
+        value: {x: 0, y: -23.9400005, z: -10}
+        inSlope: {x: 0, y: -.917500019, z: 0}
+        outSlope: {x: 0, y: -.917500019, z: 0}
         tangentMode: 0
       - time: 30
         value: {x: 0, y: -30, z: -10}
-        inSlope: {x: 0, y: -1, z: 0}
-        outSlope: {x: 0, y: -1, z: 0}
+        inSlope: {x: 0, y: -.504999936, z: 0}
+        outSlope: {x: 0, y: -.504999936, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -97,6 +102,11 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
+      - time: 18
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
       - time: 30
         value: 0
         inSlope: 0
@@ -113,13 +123,18 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: -1
-        outSlope: -1
+        inSlope: -1.33000004
+        outSlope: -1.33000004
+        tangentMode: 10
+      - time: 18
+        value: -23.9400005
+        inSlope: -.917500019
+        outSlope: -.917500019
         tangentMode: 10
       - time: 30
         value: -30
-        inSlope: -1
-        outSlope: -1
+        inSlope: -.504999936
+        outSlope: -.504999936
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -131,6 +146,11 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
+        value: -10
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      - time: 18
         value: -10
         inSlope: 0
         outSlope: 0
@@ -170,10 +190,24 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 30
-    functionName: FinishProtest
+  - time: 11
+    functionName: Finish
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 1
+    messageOptions: 0
+  - time: 18
+    functionName: Finish
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 2
+    messageOptions: 0
+  - time: 30
+    functionName: Finish
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 3
     messageOptions: 0

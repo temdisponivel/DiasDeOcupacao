@@ -17,6 +17,8 @@ namespace Assets.Script.Ocupation
         public List<System.Action> _finishCallbacksDay = new List<System.Action>();
         public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
+        public GameObject[] _groups = null;
+
         public int _lastDay = 10;
         public bool WithSound { get; set; }
         public Day Day { get; set; }
@@ -189,6 +191,7 @@ namespace Assets.Script.Ocupation
                 else
                 {
                     this._occupationStatus._popularAdeptance--;
+
                 }
             }
             else
@@ -282,6 +285,23 @@ namespace Assets.Script.Ocupation
             Day.Number = 1;
             this.ShouldProtest = true;
             this.ShouldInterview = false;
+        }
+
+        /// <summary>
+        /// Function that reestart the game.
+        /// </summary>
+        public void RestartGame()
+        {
+            GameObject.Destroy(this.gameObject);
+            Application.LoadLevel("Intro");
+        }
+
+        /// <summary>
+        /// Function that close the game.
+        /// </summary>
+        public void CloseGame()
+        {
+            Application.Quit();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace Activities
         {
             if (Input.GetButtonDown("Submit"))
             {
-                this.Finish();
+                this.Finish(GameManager.Instance._occupationStatus._popularAdeptance);
             }
             if (Input.GetButton("Jump"))
             {
@@ -50,10 +50,13 @@ namespace Activities
         /// <summary>
         /// Function that finish this activity.
         /// </summary>
-        public void Finish()
+        public void Finish(int group)
         {
-            FadeManager.Instance.FadeIn();
-            this.StartCoroutine(this.WaitToReturn());
+            if (group == GameManager.Instance._occupationStatus._popularAdeptance)
+            {
+                FadeManager.Instance.FadeIn();
+                this.StartCoroutine(this.WaitToReturn());
+            }
         }
         
         /// <summary>

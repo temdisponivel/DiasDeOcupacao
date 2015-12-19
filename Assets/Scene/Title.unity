@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
-    m_FontSize: 18
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: .959999979
+    m_LineSpacing: 1
   m_Text: "Manifesto da ocupa\xE7\xE3o\r\n\r\n\tCuide da sua escola. \n\tMantenha
     a escola limpa, os estudantes alimentados, e n\xE3o se esque\xE7a de continuar
     estudando.\r\n\n\tResista aos ataques da pol\xEDcia, proteste de vez em quando
@@ -217,8 +217,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -24.1700001}
-  m_SizeDelta: {x: 244.940002, y: 410}
+  m_AnchoredPosition: {x: 0, y: 37}
+  m_SizeDelta: {x: 245, y: 287}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &186849126
 GameObject:
@@ -266,9 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 0
@@ -317,7 +317,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 257, y: -42}
+  m_AnchoredPosition: {x: 277, y: -47}
   m_SizeDelta: {x: 426, y: 98}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &199088481
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -712,7 +712,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 261, y: -35}
+  m_AnchoredPosition: {x: 281, y: -40}
   m_SizeDelta: {x: 325, y: 223}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &718589613
@@ -729,8 +729,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -948,7 +948,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 206, y: -15}
+  m_AnchoredPosition: {x: 226, y: -20}
   m_SizeDelta: {x: 325, y: 92}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &954390365
@@ -965,8 +965,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -1464,10 +1464,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
@@ -1500,7 +1500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1625151569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1666,7 +1666,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 218, y: -27}
+  m_AnchoredPosition: {x: 238, y: -32}
   m_SizeDelta: {x: 349, y: 98}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1822708890
@@ -1683,8 +1683,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
+    m_FontSize: 56
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10

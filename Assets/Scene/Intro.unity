@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
     m_FontSize: 26
     m_FontStyle: 1
     m_BestFit: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Dias de Ocupacao\n\nMatheus de Almeida - temdisponivel@gmail.com\nThiago
+  m_Text: "Dias de Ocupa\xE7\xE3o\n\nMatheus de Almeida - temdisponivel@gmail.com\nThiago
     Vieira - thi_vieira@live.com \nVitor Henrique - vitorhenrique_1996@hotmail.com "
 --- !u!222 &130741940
 CanvasRenderer:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
     m_FontSize: 26
     m_FontStyle: 1
     m_BestFit: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
     m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
     m_FontSize: 26
     m_FontStyle: 1
     m_BestFit: 0
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 93940b6dbce72bc4a9b698697f165a4f, type: 3}
+    m_Font: {fileID: 12800000, guid: fc65abfdc40b3474f9499fb521f90070, type: 3}
     m_FontSize: 26
     m_FontStyle: 1
     m_BestFit: 0
@@ -595,9 +595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: .839999974
-  m_Text: 'Programacao:
-
-    Matheus'
+  m_Text: "Programa\xE7\xE3o:\nMatheus"
 --- !u!222 &1344020069
 CanvasRenderer:
   m_ObjectHideFlags: 0
