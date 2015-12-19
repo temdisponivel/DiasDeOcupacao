@@ -47,7 +47,6 @@ namespace Assets.Script.Action
         {
             yield return new WaitForSeconds(this._transitionTime);
             Application.LoadLevel("School");
-            GameManager.Instance.FinishPoliceAttack();
         }
     }
 }

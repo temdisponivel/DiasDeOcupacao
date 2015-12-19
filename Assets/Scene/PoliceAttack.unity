@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _policeAttack: {fileID: 152950, guid: c4eaf50fc5f92b24283c90b828ddeef7, type: 2}
-  _secondsToWait: 1
+  _secondsToWait: .300000012
 --- !u!224 &1340066036
 RectTransform:
   m_ObjectHideFlags: 0

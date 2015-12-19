@@ -22,13 +22,13 @@ namespace Assets.Script.Ocupation
         public Image _imageStudy = null;
         public Image _imageDay = null;
 
-        private int _lastPopularAdeption = 0;
+        static private int _lastPopularAdeption = 0;
         
         void Start()
         {
             Ocupation.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
-            this._lastPopularAdeption = GameManager.Instance._occupationStatus._popularAdeptance;
+            Ocupation._lastPopularAdeption = GameManager.Instance._occupationStatus._popularAdeptance;
             this.InitiateDay();
         }
 
@@ -43,20 +43,18 @@ namespace Assets.Script.Ocupation
             this._imagePopularAdeption.rectTransform.sizeDelta = new Vector2 { x = this._imagePopularAdeption.sprite.bounds.size.x * 100 * GameManager.Instance._occupationStatus._popularAdeptance, y = this._imagePopularAdeption.rectTransform.sizeDelta.y };
             this._imageDay.rectTransform.sizeDelta = new Vector2 { x = this._imageDay.sprite.bounds.size.x * 100 * Day.Number, y = this._imageDay.rectTransform.sizeDelta.y };
 
-            if (this._lastPopularAdeption < GameManager.Instance._occupationStatus._popularAdeptance)
+            if (Ocupation._lastPopularAdeption < GameManager.Instance._occupationStatus._popularAdeptance)
             {
                 var groups = this._groups.FindAll(g => g.activeSelf == false);
-                Debug.Log(groups.Count);
                 groups[UnityEngine.Random.Range(0, groups.Count)].SetActive(true);
             }
-            else if (this._lastPopularAdeption > GameManager.Instance._occupationStatus._popularAdeptance)
+            else if (Ocupation._lastPopularAdeption > GameManager.Instance._occupationStatus._popularAdeptance)
             {
                 var groups = this._groups.FindAll(g => g.activeSelf == true);
-                Debug.Log(groups.Count);
                 groups[UnityEngine.Random.Range(0, groups.Count)].SetActive(false);
             }
 
-            this._lastPopularAdeption = GameManager.Instance._occupationStatus._popularAdeptance;
+            Ocupation._lastPopularAdeption = GameManager.Instance._occupationStatus._popularAdeptance;
         }
 
         public void OnDestroy()

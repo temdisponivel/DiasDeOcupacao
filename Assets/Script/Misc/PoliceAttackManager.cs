@@ -9,7 +9,7 @@ namespace Assets.Script.Misc
     public class PoliceAttackManager : MonoBehaviour
     {
         public GameObject _policeAttack = null;
-        public int _secondsToWait = 1;
+        public float _secondsToWait = 1;
 
         void Start()
         {

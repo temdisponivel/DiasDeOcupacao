@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Script.Ocupation
 {
@@ -23,7 +24,7 @@ namespace Assets.Script.Ocupation
         /// <returns>True if any of the metrics is zero</returns>
         public bool GameOver()
         {
-            return _cleanStatus == 0 || _studyStatus == 0 || _cookStatus == 0 || _popularAdeptance == 0;
+            return _cleanStatus < 0 || _studyStatus < 0 || _cookStatus < 0 || _popularAdeptance < 0;
         }
     }
 }

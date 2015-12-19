@@ -17,8 +17,6 @@ namespace Assets.Script.Ocupation
         public List<System.Action> _finishCallbacksDay = new List<System.Action>();
         public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
-        public GameObject[] _groups = null;
-
         public int _lastDay = 10;
         public bool WithSound { get; set; }
         public Day Day { get; set; }
@@ -55,15 +53,17 @@ namespace Assets.Script.Ocupation
         /// </summary>
         public void StartDay()
         {
+            if (this._occupationStatus.GameOver())
+            {
+                this.GameOver();
+                return;
+            }
+
             this.Day = new Day();
             this.Day.Started = true;
 
             foreach (var callback in this._initiatedCallbacksDay)
             {
-                if (callback == null)
-                {
-                    continue;
-                }
                 callback();
             }
 
@@ -81,7 +81,7 @@ namespace Assets.Script.Ocupation
             {
                 this.ShouldInterview = true;
             }
-            else if (NewsManager.Instance.LastNews._position == News.News.SideOfTheNews.CounterOcupation)
+            else if (NewsManager.Instance.LastNews._position == News.News.SideOfTheNews.CounterOcupation && News.NewsManager.Instance.LastNews._type != News.News.TypeOfNews.Slanderous)
             {
                 this._occupationStatus._popularAdeptance--;
             }
@@ -99,31 +99,20 @@ namespace Assets.Script.Ocupation
             PoliceAttackInpector policeAttack = null;
             if (this._indexPoliceDay < this._policeAttackDays.Length && (policeAttack = this._policeAttackDays[this._indexPoliceDay])._day == Day.Number)
             {
+                FadeManager.Instance.FadeIn();
                 if (policeAttack._dependent)
                 {
                     if (!this.Day[ActionPerformer.Actions.Interview])
                     {
-                        FadeManager.Instance.FadeIn();
                         this.StartCoroutine(this.WaitToPoliceAttack());
                     }
                 }
                 else
                 {
-                    FadeManager.Instance.FadeIn();
                     this.StartCoroutine(this.WaitToPoliceAttack());
                 }
                 this._indexPoliceDay++;
-                return;
             }
-
-            this.InternalFinishDay();
-        }
-
-        /// <summary>
-        /// Callback for when the police attack has finished.
-        /// </summary>
-        public void FinishPoliceAttack()
-        {
             this.InternalFinishDay();
         }
 
@@ -138,10 +127,6 @@ namespace Assets.Script.Ocupation
 
             foreach (var callback in this._finishCallbacksDay)
             {
-                if (callback == null)
-                {
-                    continue;
-                }
                 callback();
             }
 
@@ -182,7 +167,7 @@ namespace Assets.Script.Ocupation
                 this._occupationStatus._studyStatus = Mathf.Clamp(this._occupationStatus._studyStatus + 1, 0, this._occupationStatus._maxStatus);
             }
 
-
+            bool popularAdepetionDecrease = false;
             if (this.Day[ActionPerformer.Actions.Interview])
             {
                 if (this.ShouldInterview)
@@ -191,14 +176,15 @@ namespace Assets.Script.Ocupation
                 }
                 else
                 {
+                    popularAdepetionDecrease = true;
                     this._occupationStatus._popularAdeptance--;
-
                 }
             }
             else
             {
                 if (this.ShouldInterview)
                 {
+                    popularAdepetionDecrease = true;
                     this._occupationStatus._popularAdeptance--;
                 }
             }
@@ -211,13 +197,11 @@ namespace Assets.Script.Ocupation
                 }
                 else
                 {
-                    this._occupationStatus._popularAdeptance--;
+                    if (!popularAdepetionDecrease)
+                    {
+                        this._occupationStatus._popularAdeptance--;
+                    }
                 }
-            }
-
-            if (this._occupationStatus.GameOver())
-            {
-                this.GameOver();
             }
         }
 

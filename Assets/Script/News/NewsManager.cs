@@ -52,7 +52,7 @@ namespace Assets.Script.News
                 this.ShowFirstNews();
                 NewsManager.ShowFirst = false;
             }
-
+            
             NewsManager.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
             GameManager.Instance.AddFinishDayCallback(this.FinishDay);
@@ -156,7 +156,6 @@ namespace Assets.Script.News
 
         public void OnDestroy()
         {
-            Debug.Log("REMOVE");
             GameManager.Instance.RemoveInitiateDayCallback(this.InitiateDay);
             GameManager.Instance.RemoveFinishDayCallback(this.FinishDay);
         }
