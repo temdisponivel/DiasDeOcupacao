@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using Assets.Script.Ocupation;
+using Assets.Script.Occupation;
 using System.Collections.Generic;
 
 namespace Assets.Script.Misc
@@ -20,7 +20,7 @@ namespace Assets.Script.Misc
 
         void Start()
         {
-            List<Ocupation.OccupationStatus.Metrics> _withZero = GameManager.Instance._occupationStatus.MetricsWithZero();
+            List<Occupation.OccupationStatus.Metrics> _withZero = GameManager.Instance._occupationStatus.MetricsWithZero();
             var messagesInCommon = this._messages.FindAll(m => _withZero.Contains(m._metric));
             if (GameManager.Instance.LoseForPoliceAttack || messagesInCommon.Count == 0)
             {

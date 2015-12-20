@@ -5,7 +5,7 @@ using Assets.Script.Misc;
 using Assets.Script.Action;
 using Assets.Script.News;
 
-namespace Assets.Script.Ocupation
+namespace Assets.Script.Occupation
 {
     /// <summary>
     /// Class that hold usefull information about mechanics and stuff.
@@ -50,7 +50,7 @@ namespace Assets.Script.Ocupation
         }
 
         /// <summary>
-        /// Initiate a new day in ocupation.
+        /// Initiate a new day in occupation.
         /// </summary>
         public void StartDay()
         {
@@ -88,7 +88,7 @@ namespace Assets.Script.Ocupation
         }
 
         /// <summary>
-        /// Finish a day in ocupation.
+        /// Finish a day in occupation.
         /// </summary>
         public void FinishDay()
         {
@@ -208,7 +208,7 @@ namespace Assets.Script.Ocupation
                 }
             }
 
-            if (NewsManager.LastNews._position == News.News.SideOfTheNews.CounterOcupation && NewsManager.LastNews._type != News.News.TypeOfNews.Slanderous)
+            if (NewsManager.LastNews._position == News.News.SideOfTheNews.CounterOccupation && NewsManager.LastNews._type != News.News.TypeOfNews.Slanderous)
             {
                 this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]--;
                 popularAdepetionDecrease = true;

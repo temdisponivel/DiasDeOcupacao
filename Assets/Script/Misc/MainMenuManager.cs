@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using Assets.Script.Ocupation;
+using Assets.Script.Occupation;
 using System;
 
 namespace Assets.Script.Misc

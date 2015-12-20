@@ -1,4 +1,4 @@
-﻿using Assets.Script.Ocupation;
+﻿using Assets.Script.Occupation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

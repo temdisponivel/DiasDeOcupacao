@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Assets.Script.Ocupation;
+using Assets.Script.Occupation;
 
 namespace Assets.Script.Misc
 {

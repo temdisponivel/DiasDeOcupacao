@@ -13,6 +13,6 @@ namespace Assets.Script.Misc
     {
         public string _title;
         public string _message;
-        public Ocupation.OccupationStatus.Metrics _metric;
+        public Occupation.OccupationStatus.Metrics _metric;
     }
 }

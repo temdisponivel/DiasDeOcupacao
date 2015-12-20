@@ -18,8 +18,8 @@ namespace Assets.Script.News
         /// </summary>
         public enum SideOfTheNews
         {
-            ProOcupation,
-            CounterOcupation,
+            ProOccupation,
+            CounterOccupation,
             Neutral
         }
 
@@ -28,7 +28,7 @@ namespace Assets.Script.News
         /// </summary>
         public enum SubjectOfTheNews
         {
-            Ocupation,
+            Occupation,
             Protest,
             Interview
         }
@@ -43,6 +43,6 @@ namespace Assets.Script.News
         public string _newsMessage = "";
         public SideOfTheNews _position = SideOfTheNews.Neutral;
         public TypeOfNews _type = TypeOfNews.Truthful;
-        public SubjectOfTheNews _subject = SubjectOfTheNews.Ocupation;
+        public SubjectOfTheNews _subject = SubjectOfTheNews.Occupation;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Assets.Script.Misc;
-using Assets.Script.Ocupation;
+using Assets.Script.Occupation;
 using System;
 using System.Collections;
 using System.Collections.Generic;

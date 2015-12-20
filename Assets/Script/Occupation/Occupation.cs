@@ -5,14 +5,14 @@ using UnityEngine.UI;
 using Assets.Script.Misc;
 
 
-namespace Assets.Script.Ocupation
+namespace Assets.Script.Occupation
 {
     /// <summary>
-    /// Class that represents the ocupation.
+    /// Class that represents the occupation.
     /// </summary>
-    public class Ocupation : MonoBehaviour
+    public class Occupation : MonoBehaviour
     {
-        static public Ocupation Instance = null;
+        static public Occupation Instance = null;
 
         public List<GameObject> _groups = null;
 
@@ -26,7 +26,7 @@ namespace Assets.Script.Ocupation
         
         void Start()
         {
-            Ocupation.Instance = this;
+            Occupation.Instance = this;
             GameManager.Instance.AddInitiateDayCallback(this.InitiateDay);
             this.InitiateDay();
         }
@@ -44,7 +44,7 @@ namespace Assets.Script.Ocupation
 
             bool status = true;
             var groups = this._groups.FindAll(g => g.activeSelf == false);
-            if (Ocupation._lastPopularAdeption > GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption])
+            if (Occupation._lastPopularAdeption > GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption])
             {
                 groups = this._groups.FindAll(g => g.activeSelf == true);
                 status = false;                
@@ -55,7 +55,7 @@ namespace Assets.Script.Ocupation
                 groups[UnityEngine.Random.Range(0, groups.Count)].SetActive(status);
             }
 
-            Ocupation._lastPopularAdeption = GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption];
+            Occupation._lastPopularAdeption = GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption];
         }
 
         public void OnDestroy()

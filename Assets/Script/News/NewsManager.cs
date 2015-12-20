@@ -3,7 +3,7 @@ using System.Collections;
 using Assets.Script.Misc;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using Assets.Script.Ocupation;
+using Assets.Script.Occupation;
 
 namespace Assets.Script.News
 {
@@ -105,7 +105,7 @@ namespace Assets.Script.News
         {
             if (this._slanderousNewsDayIndex < this._slanderousNewsDay.Length && this._slanderousNewsDay[this._slanderousNewsDayIndex] == Day.Number)
             {
-                this.ShowNews(this.GetNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Slanderous));
+                this.ShowNews(this.GetNews(News.SubjectOfTheNews.Occupation, News.SideOfTheNews.CounterOccupation, News.TypeOfNews.Slanderous));
             }
             else
             {
@@ -122,22 +122,22 @@ namespace Assets.Script.News
             {
                 if (GameManager.Instance.ShouldInterview)
                 {
-                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Interview, News.SideOfTheNews.ProOcupation, News.TypeOfNews.Truthful);
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Interview, News.SideOfTheNews.ProOccupation, News.TypeOfNews.Truthful);
                 }
                 else
                 {
-                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Interview, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Truthful);
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Interview, News.SideOfTheNews.CounterOccupation, News.TypeOfNews.Truthful);
                 }
             }
             else if (GameManager.Instance.Day[Action.ActionPerformer.Actions.Protest])
             {
                 if (GameManager.Instance.ShouldProtest)
                 {
-                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Protest, News.SideOfTheNews.ProOcupation, News.TypeOfNews.Truthful);
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Protest, News.SideOfTheNews.ProOccupation, News.TypeOfNews.Truthful);
                 }
                 else
                 {
-                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Protest, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Truthful);
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Protest, News.SideOfTheNews.CounterOccupation, News.TypeOfNews.Truthful);
                 }
             }
             else
@@ -145,11 +145,11 @@ namespace Assets.Script.News
                 if (!GameManager.Instance.Day[Action.ActionPerformer.Actions.Clean] || !GameManager.Instance.Day[Action.ActionPerformer.Actions.Cook] ||
                     !GameManager.Instance.Day[Action.ActionPerformer.Actions.Study])
                 {
-                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.CounterOcupation, News.TypeOfNews.Truthful);
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Occupation, News.SideOfTheNews.CounterOccupation, News.TypeOfNews.Truthful);
                 }
                 else
                 {
-                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Ocupation, News.SideOfTheNews.ProOcupation, News.TypeOfNews.Truthful);
+                    this.NextNews = this.GetNews(News.SubjectOfTheNews.Occupation, News.SideOfTheNews.ProOccupation, News.TypeOfNews.Truthful);
                 }
             }
         }
