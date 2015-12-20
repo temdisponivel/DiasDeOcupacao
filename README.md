@@ -1,22 +1,30 @@
 # DiasDeOcupacao
-Simple tycoon game made for the #OcupaGameJam using Unity 5.x
+Simple tycoon game made for the #ocupajam using Unity 5.x
 
 Credits:
 Matheus de Almeida - temdisponivel@gmail.com
+
 Thiago Vieira - thi_vieira@live.com 
+
 Vitor Henrique - vitorhenrique_1996@hotmail.com 
+
 
 Design:
 Matheus
+
 Thiago
+
 Vitor
+
 
 Programing:
 Matheus
 
 Art:
 Thiago
+
 Vitor
+
 
 Sound:
 
