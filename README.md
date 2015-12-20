@@ -20,7 +20,7 @@ Vitor
 Programing:
 Matheus
 
-Art:
+First time artist:
 Thiago
 
 Vitor
