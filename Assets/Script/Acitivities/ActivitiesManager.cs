@@ -17,7 +17,7 @@ namespace Activities
         
         void Start()
         {
-            switch (GameManager.Instance._occupationStatus._popularAdeptance)
+            switch (GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption])
             {
                 case 1:
                     _groupTwo.SetActive(false);
@@ -35,7 +35,7 @@ namespace Activities
         {
             if (Input.GetButtonDown("Submit"))
             {
-                this.Finish(GameManager.Instance._occupationStatus._popularAdeptance);
+                this.Finish(GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption]);
             }
             if (Input.GetButton("Jump"))
             {
@@ -52,7 +52,7 @@ namespace Activities
         /// </summary>
         public void Finish(int group)
         {
-            if (group == GameManager.Instance._occupationStatus._popularAdeptance)
+            if (group == GameManager.Instance._occupationStatus[OccupationStatus.Metrics.PopularAdeption])
             {
                 FadeManager.Instance.FadeIn();
                 this.StartCoroutine(this.WaitToReturn());

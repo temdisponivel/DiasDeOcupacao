@@ -35,7 +35,7 @@ namespace Assets.Script.Action
 
         virtual public void Start()
         {
-            this._upVelocity = this._downVelocity * (this._upMultiplier - _upSubstractor);
+            this._upVelocity = this._downVelocity * (this._upMultiplier - ActionPerformer._upSubstractor);
             ActionPerformer.InAction = true;
             if (OptionsManager.Instance != null)
             {

@@ -17,6 +17,7 @@ namespace Assets.Script.Ocupation
         public List<System.Action> _finishCallbacksDay = new List<System.Action>();
         public List<System.Action> _initiatedCallbacksDay = new List<System.Action>();
 
+        public bool LoseForPoliceAttack { get; set; }
         public int _lastDay = 10;
         public bool WithSound { get; set; }
         public Day Day { get; set; }
@@ -77,16 +78,11 @@ namespace Assets.Script.Ocupation
                 this.ShouldProtest = false;
             }
 
-            if (News.NewsManager.Instance.LastNews._type == News.News.TypeOfNews.Slanderous)
+            this.ShouldInterview = false;
+            if (NewsManager.LastNews._type == News.News.TypeOfNews.Slanderous)
             {
                 this.ShouldInterview = true;
             }
-            else if (NewsManager.Instance.LastNews._position == News.News.SideOfTheNews.CounterOcupation && News.NewsManager.Instance.LastNews._type != News.News.TypeOfNews.Slanderous)
-            {
-                this._occupationStatus._popularAdeptance--;
-            }
-
-            this.ShouldInterview = false;            
 
             ActionPerformer._upSubstractor += 1f;
         }
@@ -100,7 +96,13 @@ namespace Assets.Script.Ocupation
             if (this._indexPoliceDay < this._policeAttackDays.Length && (policeAttack = this._policeAttackDays[this._indexPoliceDay])._day == Day.Number)
             {
                 FadeManager.Instance.FadeIn();
-                if (policeAttack._dependent)
+                if (Day.Number == this._lastDay)
+                {
+                    this.StartCoroutine(this.WaitToPoliceAttack());
+                    PoliceAttack.SendToWinGame = true;
+                    return;
+                }
+                else if (policeAttack._dependent)
                 {
                     if (!this.Day[ActionPerformer.Actions.Interview])
                     {
@@ -143,28 +145,28 @@ namespace Assets.Script.Ocupation
         {
             if (!this.Day[ActionPerformer.Actions.Cook])
             {
-                this._occupationStatus._cookStatus--;
+                this._occupationStatus[OccupationStatus.Metrics.Cook]--;
             }
             else
             {
-                this._occupationStatus._cookStatus = Mathf.Clamp(this._occupationStatus._cookStatus + 1, 0, this._occupationStatus._maxStatus);
+                this._occupationStatus[OccupationStatus.Metrics.Cook]++;
             }
             if (!this.Day[ActionPerformer.Actions.Clean])
             {
-                this._occupationStatus._cleanStatus--;
+                this._occupationStatus[OccupationStatus.Metrics.Clean]--;
             }
             else
             {
-                this._occupationStatus._cleanStatus = Mathf.Clamp(this._occupationStatus._cleanStatus + 1, 0, this._occupationStatus._maxStatus);
+                this._occupationStatus[OccupationStatus.Metrics.Clean]++;
             }
 
             if (!this.Day[ActionPerformer.Actions.Study])
             {
-                this._occupationStatus._studyStatus--;
+                this._occupationStatus[OccupationStatus.Metrics.Study]--;
             }
             else
             {
-                this._occupationStatus._studyStatus = Mathf.Clamp(this._occupationStatus._studyStatus + 1, 0, this._occupationStatus._maxStatus);
+                this._occupationStatus[OccupationStatus.Metrics.Study]++;
             }
 
             bool popularAdepetionDecrease = false;
@@ -172,12 +174,12 @@ namespace Assets.Script.Ocupation
             {
                 if (this.ShouldInterview)
                 {
-                    this._occupationStatus._popularAdeptance = Mathf.Clamp(this._occupationStatus._popularAdeptance + 1, 0, this._occupationStatus._maxStatus);
+                    this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]++;
                 }
                 else
                 {
                     popularAdepetionDecrease = true;
-                    this._occupationStatus._popularAdeptance--;
+                    this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]--;
                 }
             }
             else
@@ -185,23 +187,36 @@ namespace Assets.Script.Ocupation
                 if (this.ShouldInterview)
                 {
                     popularAdepetionDecrease = true;
-                    this._occupationStatus._popularAdeptance--;
+                    this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]--;
                 }
             }
 
             if (this.Day[ActionPerformer.Actions.Protest])
             {
+                this._lastProtest = Day.Number;
                 if (this.ShouldProtest)
                 {
-                    this._occupationStatus._popularAdeptance = Mathf.Clamp(this._occupationStatus._popularAdeptance + 1, 0, this._occupationStatus._maxStatus);
+                    this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]++;
                 }
                 else
                 {
                     if (!popularAdepetionDecrease)
                     {
-                        this._occupationStatus._popularAdeptance--;
+                        this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]--;
+                        popularAdepetionDecrease = true;
                     }
                 }
+            }
+
+            if (NewsManager.LastNews._position == News.News.SideOfTheNews.CounterOcupation && NewsManager.LastNews._type != News.News.TypeOfNews.Slanderous)
+            {
+                this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]--;
+                popularAdepetionDecrease = true;
+            }
+
+            if (!popularAdepetionDecrease)
+            {
+                this._occupationStatus[OccupationStatus.Metrics.PopularAdeption]++;
             }
         }
 
@@ -287,6 +302,8 @@ namespace Assets.Script.Ocupation
             ActionPerformer._upSubstractor = 0;
             this.ShouldProtest = true;
             this.ShouldInterview = false;
+            PoliceAttack.SendToWinGame = false;
+            this.LoseForPoliceAttack = false;
         }
 
         /// <summary>

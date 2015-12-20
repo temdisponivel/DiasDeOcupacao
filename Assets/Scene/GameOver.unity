@@ -129,12 +129,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5cd9d2c4929a1b543bf0640a0301c5ca, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &113088419 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11459032, guid: 5cd9d2c4929a1b543bf0640a0301c5ca,
-    type: 2}
-  m_PrefabInternal: {fileID: 113088418}
-  m_Script: {fileID: 11500000, guid: 86b264686580a66438ec9d05adedbc1a, type: 3}
 --- !u!1 &134401742
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: aa6e8ef1af57bf44cabc06c9dceacb7e, type: 3}
     m_FontSize: 21
@@ -344,8 +338,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 113088419}
-        m_MethodName: CloseGame
+      - m_Target: {fileID: 1164654235}
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -683,6 +677,8 @@ GameObject:
   - 114: {fileID: 1164654231}
   - 82: {fileID: 1164654233}
   - 114: {fileID: 1164654234}
+  - 114: {fileID: 1164654235}
+  - 114: {fileID: 1164654236}
   m_Layer: 5
   m_Name: GameOverMessage
   m_TagString: Untagged
@@ -751,7 +747,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: .200000003
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -821,6 +817,54 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: .765999973}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &1164654235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1164654229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8435363078fd6b346a0f934321d13d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1164654236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1164654229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 315270eeac0fb6645b9fe620c67fd914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messages:
+  - _title: Alunos deixam escola imunda e governador tem seu pretexto
+    _message: "Ap\xF3s alunos deixarem a escola imunda, o governador teve o pretexto
+      que precisava para tomar a escola a for\xE7a. Essa \xE9 uma grande perca para
+      a ocupa\xE7\xE3o."
+    _metric: 0
+  - _title: Governador acha pretexto e invade escola
+    _message: "O governador do estado achou o pretexto que precisava para invadir
+      a escola ocupada: falta de organiza\xE7\xE3o e estudos. PM invade escola e reestrutura\xE7\xE3o
+      prossegue."
+    _metric: 1
+  - _title: "Alunos com fome n\xE3o suportaram ataque da PM"
+    _message: "Alunos famintos cederam ao ataque da PM. Governador recupera a escola
+      e prossegue com a reestrutura\xE7\xE3o."
+    _metric: 2
+  - _title: "Popula\xE7\xE3o se volta contra ocupa\xE7\xF5es"
+    _message: "O n\xEDvel de popularidade das ocupa\xE7\xF5es caiu e a popula\xE7\xE3o
+      deu apoio \xE0 retomada da ocupa\xE7\xE3o. Reestrutura\xE7\xE3o prossegue."
+    _metric: 3
+  _messagePoliceAttack:
+    _title: "Alunos n\xE3o resistem a ataque da PM"
+    _message: "Governador envia soldados para invalidar escola ocupada. Alunos n\xE3o
+      conseguiram resistir e cederam ao ataque."
+    _metric: 0
+  _textTitle: {fileID: 134401743}
+  _textMessage: {fileID: 1409514943}
 --- !u!1 &1179680297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,8 +1356,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 113088419}
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 1164654235}
+        m_MethodName: Reestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

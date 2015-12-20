@@ -1207,9 +1207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Entrevistar
-
-'
+  m_Text: Entrevista
 --- !u!222 &466807980
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1476,6 +1474,7 @@ MonoBehaviour:
   - {fileID: 2108593219}
   - {fileID: 974598596}
   - {fileID: 22492697}
+  - {fileID: 148023244}
   _imagePopularAdeption: {fileID: 1754338791}
   _imageClean: {fileID: 1823632314}
   _imageCook: {fileID: 188056624}

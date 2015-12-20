@@ -15,6 +15,7 @@ namespace Assets.Script.Action
     /// </summary>
     public class PoliceAttack : ActionPerformer
     {
+        static public bool SendToWinGame { get; set; }
         public float _transitionTime = 2;
         protected override void FinishAction(bool success)
         {
@@ -36,6 +37,7 @@ namespace Assets.Script.Action
         private IEnumerator WaitToGameOver()
         {
             yield return new WaitForSeconds(this._transitionTime);
+            GameManager.Instance.LoseForPoliceAttack = true;
             GameManager.Instance.GameOver();
         }
 
@@ -46,7 +48,14 @@ namespace Assets.Script.Action
         private IEnumerator WaitToSchool()
         {
             yield return new WaitForSeconds(this._transitionTime);
-            Application.LoadLevel("School");
+            if (PoliceAttack.SendToWinGame)
+            {
+                Application.LoadLevel("WinGame");
+            }
+            else
+            {
+                Application.LoadLevel("School");
+            }
         }
     }
 }

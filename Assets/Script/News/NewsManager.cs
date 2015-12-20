@@ -16,7 +16,7 @@ namespace Assets.Script.News
 
         static public bool ShowFirst { get; set; }
         public int[] _slanderousNewsDay = null;
-        public News LastNews { get; set; }
+        static public News LastNews { get; set; }
         public News NextNews { get; set; }
         public GameObject _newsObject = null;
         public Text _newsDay = null;
@@ -87,7 +87,7 @@ namespace Assets.Script.News
             this._newsTitle.text = news._newsTitle;
             this._newsMessage.text = news._newsMessage;
             this._newsObject.SetActive(true);
-            this.LastNews = news;
+            NewsManager.LastNews = news;
         }
 
         /// <summary>

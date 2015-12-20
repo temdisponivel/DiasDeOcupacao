@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 11411886}
   _downVelocity: 25
-  _upMultiplier: 30
+  _upMultiplier: 27
   _upVelocity: 1
   _type: 2
 --- !u!114 &11450538
@@ -381,7 +381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _upMultiplier
-      value: 30
+      value: 27
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
